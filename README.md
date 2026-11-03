@@ -37,7 +37,7 @@ No utiliza GitHub Actions.
 - Diseño responsive y teclado; estados de foco y soporte de `prefers-reduced-motion`.
 - Sin métricas de negocio inventadas, credenciales, ni información privada de clientes.
 - Rendo se muestra únicamente mediante su aplicación; **no enlazar el código fuente**.
-- Orcastrator es un proyecto personal y **no forma parte** de este portafolio.
+- Los proyectos de uso personal permanecen fuera del portafolio.
 - Antes de añadir imágenes reales de trabajos privados, solicitar autorización a titulares.
 - La responsabilidad y contribuciones en proyectos académicos colaborativos se declaran como tales.
 
