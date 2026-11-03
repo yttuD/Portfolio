@@ -10,9 +10,9 @@ const html = read('index.html');
 const css = read('styles.css');
 const js = read('app.js');
 
-test('contains semantic sections and accessible navigation', () => {
+test('contains all main sections, semantic landmarks and accessible menu', () => {
   for (const id of ['main', 'inicio', 'proyectos', 'enfoque', 'perfil', 'contacto']) {
-    assert.ok(html.includes('id="' + id + '"'), 'Missing #' + id);
+    assert.match(html, new RegExp(`id="${id}"`), `Missing #${id}`);
   }
   assert.match(html, /<main\s/);
   assert.match(html, /<nav\s/);
@@ -20,24 +20,23 @@ test('contains semantic sections and accessible navigation', () => {
   assert.match(html, /class="skip-link"/);
 });
 
-test('hash links reference real anchor IDs', () => {
+test('local hash links point to existing anchors', () => {
   const ids = new Set([...html.matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]));
-  for (const m of html.matchAll(/\bhref="#([^"]+)"/g)) {
-    assert.ok(ids.has(m[1]), 'Missing anchor #' + m[1]);
-  }
+  const targets = [...html.matchAll(/\bhref="#([^"]+)"/g)].map((m) => m[1]);
+  for (const target of targets) assert.ok(ids.has(target), `Missing target #${target}`);
 });
 
-test('assets are local and source links are allowlisted', () => {
+test('references local assets and avoids exposing unapproved repository URLs', () => {
   assert.match(html, /href="\/styles\.css"/);
   assert.match(html, /src="\/app\.js"/);
   assert.match(html, /\/assets\/favicon\.svg/);
   assert.match(html, /\/assets\/og-card\.svg/);
-  for (const m of html.matchAll(/href="(https:\/\/github\.com\/yttuD\/[^"/]+)"/g)) {
-    assert.equal(m[1], 'https://github.com/yttuD/clinica-san-martin-tpi');
+  for (const match of html.matchAll(/href="(https:\/\/github\.com\/yttuD\/[^"/]+)"/g)) {
+    assert.equal(match[1], 'https://github.com/yttuD/clinica-san-martin-tpi');
   }
 });
 
-test('language, responsive layout and reduced motion are implemented', () => {
+test('language, responsive layout and reduced motion are configured', () => {
   assert.match(html, /id="languageToggle"/);
   assert.match(js, /\bes\s*:/);
   assert.match(js, /\ben\s*:/);
@@ -45,10 +44,10 @@ test('language, responsive layout and reduced motion are implemented', () => {
   assert.match(css, /@media/);
 });
 
-test('Vercel config contains security response headers', () => {
+test('Vercel config exposes conservative response headers', () => {
   const config = JSON.parse(read('vercel.json'));
   const headers = config.headers.flatMap(({ headers }) => headers.map(({ key }) => key));
-  for (const key of ['X-Content-Type-Options', 'Referrer-Policy', 'Permissions-Policy']) {
-    assert.ok(headers.includes(key), 'Missing header ' + key);
-  }
+  assert.ok(headers.includes('X-Content-Type-Options'));
+  assert.ok(headers.includes('Referrer-Policy'));
+  assert.ok(headers.includes('Permissions-Policy'));
 });
