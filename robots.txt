@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://carlos-dualibe.vercel.app/sitemap.xml

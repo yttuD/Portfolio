@@ -30,3 +30,68 @@
 .wellness-editorial .wellness-privacy{font:400 10px/1.6 var(--mono);color:#b29aab;border-top:1px solid #333036;padding-top:14px;margin-top:9px}
 @media(max-width:760px){.hero-art.portrait-hero{height:450px;width:min(100%,370px);align-self:center;margin-top:14px}.wellness-feature{grid-template-columns:1fr}.wellness-visual{min-height:320px}.wellness-editorial{padding:26px}.wellness-editorial h3{font-size:clamp(39px,8vw,56px)}.wellness-editorial>p{font-size:14px}}
 @media(max-width:430px){.hero-art.portrait-hero{height:380px;width:min(100%,320px)}.portrait-tag{bottom:56px}.portrait-id{left:18px;right:18px}.wellness-visual{min-height:286px}}
+
+
+/* V3 editorial quality pass: demonstrate real work, consistent readable typography. */
+:root{--muted:#c0c4c1;--faint:#a5aba8;--line:#414744}
+.project-meta,.visual-caption,.private-note,.work-disclaimer,.tool-group-title{letter-spacing:.015em}
+.project-meta{font-size:11px;line-height:1.6;color:#bac7c0}
+.visual-caption{font-size:10px;letter-spacing:.07em;color:#f7fcf8}
+.project-summary{font-size:16px;line-height:1.75;color:#cbd3cd;max-width:550px}
+.compact-copy>p,.wellness-editorial>p{font-size:15px;line-height:1.72;color:#c8cfcb}
+.project-type{color:#d0dad2}
+.compact-copy h3 .compact-arrow{display:none}
+.work-disclaimer{color:#aebcb4;font-size:11px;line-height:1.6;max-width:840px}
+.evidence-label{display:inline-flex;align-self:start;width:max-content;max-width:100%;border:1px solid #52644b;background:rgba(211,245,139,.075);color:#d8f59b;padding:8px 11px;border-radius:50px;font:500 10px/1.25 var(--mono);letter-spacing:.01em;margin:11px 0 2px}
+.compact-copy .evidence-label{font-size:10px;margin:15px 0 0}
+.wellness-editorial .evidence-label{border-color:#73546a;background:rgba(255,182,221,.11);color:#ffe3f5;margin:8px 0 0}
+.section h2 em,.approach-section h2 em,.profile-left h2 em{color:#d5f58c;font-style:normal;opacity:1}
+.approach-section h2 em{color:#2f4234}
+.approach-section h2{letter-spacing:-.06em}
+.profile-left h2{letter-spacing:-.06em}
+.section-overline{font-size:11px;letter-spacing:.085em}
+.project-link,.mini-link{font-size:12px;font-weight:600}
+.private-project-link{color:#ccdaaf}
+.real-image-stage{position:relative;overflow:hidden;background:#101818;isolation:isolate}
+.actual-project-photo{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center center;filter:saturate(.82) contrast(1.06)}
+.real-image-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(10,14,13,.8) 0%,transparent 29%,transparent 42%,rgba(7,12,12,.93) 100%)}
+.real-image-top,.real-image-bottom{position:absolute;z-index:2;left:24px;right:24px;color:#fff;display:flex;justify-content:space-between;gap:12px}
+.real-image-top{top:22px;font:500 10px/1.4 var(--mono);letter-spacing:.045em}
+.real-image-top span:last-child{color:#e3f9ac}
+.real-image-bottom{bottom:24px;flex-direction:column;gap:5px}
+.real-image-bottom b{font-size:26px;letter-spacing:-.055em;font-weight:800}
+.real-image-bottom span{color:#e3e8e2;font:400 11px/1.4 var(--mono)}
+.real-wellness-visual{background:#f6e3ee;display:block;isolation:isolate;min-height:415px}
+.wellness-demo-screenshot{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:83% center;filter:saturate(1.08)}
+.wellness-image-gradient{position:absolute;inset:0;background:linear-gradient(180deg,rgba(45,21,44,.55) 0%,transparent 29%,transparent 64%,rgba(43,23,46,.76) 100%)}
+.wellness-logo-badge{position:absolute;top:23px;left:23px;right:23px;display:flex;gap:11px;align-items:center;background:rgba(255,246,255,.92);border:1px solid rgba(122,75,127,.2);border-radius:12px;max-width:max-content;padding:9px 16px 9px 9px;color:#40264a;box-shadow:0 9px 35px rgba(45,21,44,.2)}
+.wellness-logo-badge img{width:46px;height:46px;flex-shrink:0;border-radius:10px}
+.wellness-logo-badge span{font-weight:800;line-height:1.2;font-size:15px;letter-spacing:-.025em}
+.wellness-logo-badge small{display:block;font:500 9px/1.5 var(--mono);letter-spacing:.04em;color:#815782;margin-top:3px}
+.wellness-image-note{position:absolute;z-index:3;left:23px;right:23px;bottom:23px;color:white;font:500 11px/1.3 var(--mono);letter-spacing:.01em}
+.wellness-feature{grid-template-columns:51% 49%;min-height:415px;background:linear-gradient(135deg,#221e26,#17161a)}
+.wellness-editorial{padding:38px 48px}
+.wellness-editorial h3{font-size:clamp(44px,5vw,76px);margin:9px 0}
+.wellness-editorial .wellness-privacy{color:#d8c5d3;border-top:1px solid #5a4e5b;font-size:11px}
+.contact-bottom{display:flex;flex-wrap:wrap;gap:20px 32px}
+.contact-bottom>p{flex:1 1 340px}
+.contact-link{min-width:220px}
+.visible-email{display:inline-block;font-family:var(--mono);font-size:clamp(13px,1.35vw,18px);font-weight:500;letter-spacing:-.02em;text-decoration:underline;text-decoration-color:#3e5541;text-underline-offset:7px;color:#111912;max-width:100%;overflow-wrap:anywhere}
+.visible-email:hover{color:#3c6f3c}
+.secondary-profile-link{display:inline-flex;align-items:center;justify-content:center;border:1px solid #192016;padding:12px 16px;color:#192016;font:600 12px var(--mono);letter-spacing:.03em;border-radius:3px}
+.secondary-profile-link:hover{background:#c4eb82}
+.footer-email{color:#c9d4c5;font:500 10px var(--mono)}
+@media(max-width:1100px){.wellness-feature{grid-template-columns:45% 55%}.wellness-editorial{padding:30px 28px}.real-image-top{font-size:9px}}
+@media(max-width:760px){.wellness-feature{display:flex;flex-direction:column}.real-wellness-visual{min-height:380px}.wellness-editorial{padding:30px 25px}.wellness-editorial h3{font-size:56px}.project-summary{font-size:15px}.real-image-stage{height:310px}.contact-bottom{gap:16px}.footer-email{display:none}}
+@media(max-width:430px){.real-wellness-visual{min-height:345px}.wellness-demo-screenshot{object-position:89% center}.wellness-logo-badge{top:14px;left:14px;padding:5px 10px 5px 5px}.wellness-logo-badge img{width:38px;height:38px}.wellness-image-note{font-size:10px;left:15px;bottom:18px}.real-image-top,.real-image-bottom{left:17px;right:17px}.real-image-top{font-size:8px}.real-image-bottom span{font-size:9px}.section-overline{font-size:10px}.project-meta{font-size:10px}}
+
+.wellness-view-image,.transai-view-image{position:absolute;z-index:5;display:inline-flex;padding:10px 13px;background:#ffffffed;color:#302233;border-radius:4px;font:700 11px/1.3 var(--sans);box-shadow:0 6px 21px #1c121633;transition:transform .2s ease}
+.wellness-view-image:hover,.transai-view-image:hover{transform:translateY(-2px)}
+.wellness-view-image{right:22px;bottom:20px}.transai-view-image{right:20px;bottom:24px;background:#d5f58c;color:#121613}
+@media(max-width:430px){.wellness-view-image{right:12px;bottom:10px;font-size:10px}.transai-view-image{right:12px;bottom:17px;font-size:10px}}
+
+/* Legibility adjustments after responsive QA */
+.chip-row span{font-size:10px;line-height:1.55;padding:5px 8px}.toolset .tool-group p{font-size:15px;line-height:1.75}.profile-left p{font-size:15px;line-height:1.82}.principle-content p{font-size:14px;line-height:1.65}.principle-content h3{font-size:17px;line-height:1.35}.project-link,.mini-link{min-height:38px;align-items:center}.visual-code,.visual-watermark{pointer-events:none}
+
+/* Focus-only shortcut. */
+.skip-link{top:0;transform:translateY(-150%);transition:transform .12s ease}.skip-link:focus,.skip-link:focus-visible{top:14px;transform:translateY(0)}

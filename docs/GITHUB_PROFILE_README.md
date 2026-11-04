@@ -6,9 +6,9 @@
 
 Construyo aplicaciones web, herramientas de gestión e integraciones que resuelven problemas concretos. Trabajo desde los requisitos y la arquitectura hasta la implementación, las pruebas y la experiencia de usuario. Me interesa el software entendible, mantenible y útil.
 
-**📍 Argentina · 💼 Interesado en oportunidades Full Stack, Backend y desarrollo de productos**
+**📍 Argentina · 💼 Abierto a empleo remoto y proyectos freelance · ✉️ [carlosdualive@gmail.com](mailto:carlosdualive@gmail.com)**
 
-[**Explorar mi portafolio ↗**](https://github.com/yttuD/Portfolio) · [**Ver sistema de turnos ↗**](https://github.com/yttuD/clinica-san-martin-tpi)
+[**Explorar mi portafolio ↗**](https://carlos-dualibe.vercel.app) · [**Ver sistema de turnos ↗**](https://github.com/yttuD/clinica-san-martin-tpi)
 
 ## Experiencia y proyectos seleccionados
 
@@ -16,8 +16,8 @@ Construyo aplicaciones web, herramientas de gestión e integraciones que resuelv
 | --- | --- | --- |
 | **Rendo — plataforma inmobiliaria** | Aplicación SaaS con catálogo público, gestión de unidades, reservas, roles y operaciones. Arquitectura web Full Stack con Next.js, NestJS y Supabase. | [Demo beta](https://rendo-beta-web.vercel.app/es) · Código no enlazado |
 | **Sistema de turnos multiempresa** | Agenda, profesionales, pacientes y lógica para prevenir reservas conflictivas. React, Node.js, Prisma y PostgreSQL. | [Repositorio público](https://github.com/yttuD/clinica-san-martin-tpi) |
-| **TransAI — inspección asistida por IA** | Proyecto académico colaborativo. Arquitectura distribuida para inspección visual con IA local, APIs y revisión humana. Django, FastAPI, React y Node.js. | Caso documentado en el [portafolio](https://github.com/yttuD/Portfolio) |
-| **Producto web de bienestar** | Proyecto privado para un cliente, desarrollado por etapas: PWA, autenticación, consentimientos y onboarding guiado. Next.js, TypeScript y Supabase. | Experiencia anonimizada; sin código ni datos del cliente |
+| **TransAI — inspección asistida por IA** | Proyecto académico colaborativo. Arquitectura distribuida para inspección visual con IA local, APIs y revisión humana. Django, FastAPI, React y Node.js. | Caso documentado en el [portafolio](https://carlos-dualibe.vercel.app/#proyectos) |
+| **Mi Ciclo — aplicación de bienestar** | Desarrollo por fases de una PWA para cliente: autenticación, consentimientos versionados y onboarding guiado. Next.js, TypeScript y Supabase. | Captura de demo con datos ficticios en el [portafolio](https://carlos-dualibe.vercel.app/#proyectos); código privado |
 | **Sistema empresarial offline-first** | Trabajo privado sobre persistencia local, reglas de negocio, permisos y sincronización controlada. TypeScript, SQLite y Supabase. | Descripción anonimizada |
 
 ## Stack con el que trabajo
@@ -37,6 +37,6 @@ Me importa separar los resultados verificados de las funciones en desarrollo, y 
 
 ---
 
-**¿Buscas un desarrollador?** Puedes revisar mis proyectos desde el [portafolio](https://github.com/yttuD/Portfolio) y contactarme por los canales que figuran en mi perfil de GitHub.
+**¿Buscas un desarrollador?** Puedes revisar mis proyectos en [carlos-dualibe.vercel.app](https://carlos-dualibe.vercel.app) o escribirme a [carlosdualive@gmail.com](mailto:carlosdualive@gmail.com). Disponible para contratación y trabajos freelance.
 
-<sub>English summary: Full Stack Developer based in Argentina, working with TypeScript, React, Next.js, Node.js, Python and SQL. I build web applications, business systems and integrations with an emphasis on reliability and product quality. Open to software development opportunities.</sub>
+<sub>English summary: Full Stack Developer based in Argentina, working with TypeScript, React, Next.js, Node.js, Python and SQL. I build web applications, business systems and integrations with an emphasis on reliability and product quality. Open to remote employment and freelance software projects. Contact: carlosdualive@gmail.com.</sub>

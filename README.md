@@ -18,7 +18,7 @@ O usar cualquier servidor de archivos estáticos. Abrir `index.html` directament
 - **Sistema de turnos**: enlace a repositorio público existente.
 - **Offline-first**: descripción técnica anonimizada. No contiene nombre ni datos del cliente.
 - Las visualizaciones de proyecto son **representaciones conceptuales**, identificadas como tales. No se presentan como capturas de producción.
-- No se publica correo personal, teléfono, claves, métricas inventadas ni información confidencial.
+- Se publica únicamente el correo profesional autorizado por el propietario. No se publican teléfonos, claves, métricas inventadas ni información confidencial.
 
 ## Cambios editoriales
 
@@ -34,11 +34,11 @@ El contenido bilingüe principal está en `app.js` y las estructuras en `index.h
 
 ## Despliegue
 
-1. Crear un repositorio GitHub separado para este portafolio, idealmente `yttuD/carlos-dualibe-portfolio`.
-2. Subir el contenido a `main`.
+1. Repositorio oficial: [`yttuD/Portfolio`](https://github.com/yttuD/Portfolio).
+2. El código está versionado en `main`; Vercel despliega automáticamente desde esa rama.
 3. En Windows, se puede usar `./publicar-windows.ps1` con las CLI de GitHub y Vercel autenticadas. Como alternativa, conectar el repositorio en Vercel, framework **Other**, carpeta raíz `/`, sin comando de build y sin directorio de salida.
 4. Desactivar protección de despliegue de producción para hacerlo público; verificar en ventana privada.
-5. Conectar dominio personal si se desea. **No usar GitHub Actions**; Vercel despliega automáticamente desde Git.
+5. Dominio: https://carlos-dualibe.vercel.app. No se requieren GitHub Actions. **No usar GitHub Actions**; Vercel despliega automáticamente desde Git.
 
 ## Decisiones de diseño
 
@@ -47,3 +47,12 @@ Ver [`AGENTS.md`](AGENTS.md), [`docs/DESIGN.md`](docs/DESIGN.md), [`docs/MOTION_
 ## Perfil público de GitHub
 
 El README que aparece en https://github.com/yttuD se administra en el repositorio especial [yttuD/yttuD](https://github.com/yttuD/yttuD). Se actualiza por separado y utiliza el retrato optimizado disponible en `assets/carlos-dualibe.webp`.
+
+## Recursos auténticos exhibidos
+
+- `assets/mi-ciclo-icon.svg`: iconografía original del cliente publicada con su permiso explícito.
+- `assets/mi-ciclo-feature-demo.png`: captura del repositorio de demostraciones (prototipo con contenido de ejemplo, no el producto final).
+- `assets/transai-fixture-defect.jpg`: fotografía de prueba incluida en los fixtures de TransAI, sin presentar inferencias ni resultados del modelo.
+- Los esquemas de Rendo, turnos y sincronización son ilustrativos y se identifican como tales.
+
+**Evidencia de imágenes:** [`docs/VISUAL_EVIDENCE.md`](docs/VISUAL_EVIDENCE.md). Contacto público autorizado: [carlosdualive@gmail.com](mailto:carlosdualive@gmail.com).
