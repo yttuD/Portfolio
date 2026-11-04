@@ -103,3 +103,14 @@ dialog{max-width:92vw;max-height:90vh;border:1px solid #809383;background:#121d1
 .case-gallery--single .case-evidence__viewport img{max-width:1000px}
 .case-gallery--mobile .case-evidence__viewport img{border:0}
 
+
+/* Aromatization manager: a product workflow illustration, not an application screenshot. */
+.case-hero--aroma .hero-grid h1{font-size:clamp(48px,6.2vw,92px);letter-spacing:-.067em;line-height:1.05;overflow-wrap:normal}
+.case-hero--aroma .hero-grid h1 .case-product-text{color:var(--ink)}
+.aroma-process{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+.aroma-process-step{min-width:0;padding:26px 22px;background:#17231b;border:1px solid #4a6050;border-radius:4px;display:flex;flex-direction:column;gap:13px}
+.aroma-process-step>span{font:600 11px var(--mono);color:var(--accent)}
+.aroma-process-step h3{font-size:clamp(17px,1.6vw,22px);line-height:1.25;margin:0;letter-spacing:-.04em}
+.aroma-process-step p{font-size:14px;line-height:1.65;color:#c5d7c9;margin:0}
+@media(max-width:850px){.aroma-process{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){.case-hero--aroma .hero-grid h1{font-size:clamp(40px,10vw,61px)}.aroma-process{grid-template-columns:1fr}.aroma-process-step{padding:22px}}
