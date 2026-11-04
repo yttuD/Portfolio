@@ -242,3 +242,8 @@
 @media(max-width:760px){.email-action-group{width:100%;max-width:100%}.email-alternatives{gap:10px}.email-option{flex:1 1 auto}}
 @media(max-width:390px){.email-alternatives{display:grid;grid-template-columns:1fr;width:100%}.email-option{width:100%}.email-action-group .contact-link{white-space:normal}}
 
+
+/* Archived appointment case: never imply that the historical screen is clickable or live. */
+.live-turnos:hover img{transform:none;cursor:default}
+.live-turnos .screen-topbar .live-dot{background:#b6b4c1;box-shadow:none}
+.turnos-status{color:#c9bda1!important;border-left:2px solid #b8a87f;padding:8px 0 8px 12px;margin:10px 0 16px!important;max-width:unset!important;min-height:0!important;font-size:12px!important;line-height:1.6!important}

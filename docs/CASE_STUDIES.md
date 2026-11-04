@@ -1,6 +1,6 @@
 # Evidencias y límites de los casos seleccionados
 
-Este documento contextualiza los proyectos del portafolio sin pretender que todas las funcionalidades estén certificadas en producción. El sitio ahora combina **material auténtico de repositorios** (una demo de Mi Ciclo y una imagen de ensayo de TransAI) con **esquemas ilustrativos**, señalados según su procedencia. Ninguna imagen de demo acredita que la funcionalidad esté publicada en producción.
+Este documento contextualiza los proyectos del portafolio sin pretender que todas las funcionalidades estén certificadas en producción. El sitio combina **capturas reales** de las interfaces de Rendo, Mi Ciclo y Turnos con **esquemas explicativos** para TransAI y el sistema offline-first, identificados según su procedencia. Ninguna imagen de demo acredita que la funcionalidad esté publicada en producción.
 
 ## Rendo — plataforma de alquileres
 
@@ -21,7 +21,7 @@ Este documento contextualiza los proyectos del portafolio sin pretender que toda
 
 **Autoría:** trabajo académico colaborativo. No se atribuye implementación individual de todos los componentes. Código privado.
 
-**Imagen publicada:** fotografía procedente de `test_fixtures/demo_towel_defect.jpg`; es una muestra de ensayo, no una captura del modelo ni una predicción verificada.
+**Material mostrado:** diagrama conceptual de arquitectura. No se publica una fotografía de ensayo ni se presenta como predicción real.
 
 **Qué falta acreditar:** reproducir pruebas e inferencia real en el entorno y commit de entrega, vincular evidencia de resultados, y separar heurísticas de métricas calibradas.
 
@@ -31,7 +31,9 @@ Este documento contextualiza los proyectos del portafolio sin pretender que toda
 
 **Enfoque documentado:** React/Vite, NestJS, PostgreSQL, Prisma, Redis, autenticación y validaciones.
 
-**Evidencia pública:** [repositorio](https://github.com/yttuD/clinica-san-martin-tpi), con README reformulado y comandos para reproducir el proyecto.
+**Estado actual:** el backend y la base de datos dejaron de estar desplegados hace meses. La antigua URL de la aplicación no debe presentarse como demo funcional ni enlazarse desde el portafolio.
+
+**Evidencia pública:** [repositorio de código](https://github.com/yttuD/clinica-san-martin-tpi) y captura histórica de la interfaz en el portafolio; esa captura demuestra el aspecto visual del frontend, no la operatividad actual de las reservas.
 
 **Qué falta acreditar:** pruebas E2E actuales, seguridad multiempresa y preparación para producción. El arranque actual requiere eliminar comandos con riesgo de pérdida de datos antes de un uso real.
 
@@ -51,7 +53,7 @@ Este documento contextualiza los proyectos del portafolio sin pretender que toda
 
 **Enfoque documentado:** Next.js, React, TypeScript y Supabase. Trabajo por fases; distinguir lo entregado de lo que permanece en desarrollo.
 
-**Imagen publicada:** ícono original de Mi Ciclo y captura de `Demo-MiCiclo/playwright-test-screenshot.png`. La captura procede de una demo anterior de funcionalidades con datos de ejemplo; no es el producto final y no contiene información real de usuarias.
+**Material mostrado:** ícono original de Mi Ciclo y dos capturas documentadas del producto con datos de prueba. Se mantiene su procedencia técnica en `docs/VISUAL_EVIDENCE.md`, sin mostrar nombres de ramas ni estructura de Git en la tarjeta.
 
 **Privacidad:** los repositorios de la aplicación y la demo se mantienen privados. No se publican credenciales, documentos internos o datos de clientas.
 

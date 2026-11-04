@@ -82,3 +82,16 @@ test('Mi Ciclo cards describe the product, not its source branch', () => {
   }
   assert.ok(html.includes('>MI CICLO</b>'));
 });
+
+test('Appointments card does not link to discontinued backend and database', () => {
+  assert.ok(!html.includes('https://clinica-san-martin-tpi-self.vercel.app'), 'Discontinued appointment deployment must not be linked');
+  assert.ok(html.includes('/assets/turnos-frontend-live.webp'), 'Preserve the historical frontend screenshot');
+  assert.ok(html.includes('https://github.com/yttuD/clinica-san-martin-tpi'), 'The public code repository should stay available');
+  assert.ok(html.includes('data-i18n="turnos.status"'), 'Visible service status must be present');
+  for (const lang of ['es','en']) {
+    assert.ok(dict[lang]['turnos.status'], 'Status should be translated');
+    assert.ok(dict[lang]['turnos.caption'], 'Historical screenshot label should be translated');
+  }
+  assert.match(dict.es['turnos.status'], /fuera de servicio/);
+  assert.match(dict.en['turnos.status'], /offline/);
+});

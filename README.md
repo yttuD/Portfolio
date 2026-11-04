@@ -17,7 +17,7 @@ O usar cualquier servidor de archivos estáticos. Abrir `index.html` directament
 - **TransAI**: trabajo académico colaborativo, caso descriptivo; código privado.
 - **Sistema de turnos**: enlace a repositorio público existente.
 - **Offline-first**: descripción técnica anonimizada. No contiene nombre ni datos del cliente.
-- Rendo y Turnos muestran capturas auténticas de sus frontends públicos; TransAI y el sistema offline-first muestran diagramas explicativos. Cada imagen está etiquetada con su procedencia.
+- Rendo muestra una captura pública actual de su beta. Turnos muestra una captura histórica del frontend, **sin enlace a una demo funcional** porque su backend y su base de datos ya no están desplegados. TransAI y el sistema offline-first muestran diagramas explicativos. Cada imagen está etiquetada con su procedencia.
 - Se publica únicamente el correo profesional autorizado por el propietario. No se publican teléfonos, claves, métricas inventadas ni información confidencial.
 
 ## Cambios editoriales
