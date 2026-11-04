@@ -29,3 +29,16 @@ La nueva galería muestra imágenes con dimensiones proporcionales (`width: 100%
 En Mi Ciclo las capturas (390 × 2047 y 390 × 844) mantienen su proporción original. Turnos conserva su fotografía histórica del frontend (1000 × 625), sin redirigir a la aplicación descontinuada.
 
 La interfaz separa el medio de sus leyendas y permite ampliar opcionalmente. Los títulos y las alternativas accesibles se traducen a español e inglés.
+
+## Evidencia en movimiento — 2026-11-04
+
+Las animaciones de los casos Rendo y Turnos proceden de **grabaciones del frontend público original**, realizadas con Chromium/Playwright y transcodificadas a WebM VP9, sin audio. No son renders generados ni suponen que los módulos de backend funcionen.
+
+| Recurso | Página pública grabada | Qué muestra | Límites |
+| --- | --- | --- | --- |
+| `assets/rendo-motion-hero.webm` | `https://rendo-beta-web.vercel.app/es` | Secuencia de portada con pequeñas estrellas animadas (`twinkle`) | Grabación visual de aproximadamente cinco segundos; no demuestra operaciones de alquiler, cobros o reservas |
+| `assets/turnos-motion-hero.webm` | `https://clinica-san-martin-tpi-self.vercel.app/` | Hélice ADN 3D animada mediante React Three Fiber | Solo evidencia la animación del frontend histórico. Backend y base de datos continúan descontinuados |
+
+**Integración:** se conservan las capturas completas como imagen de respaldo (`poster`) y las descripciones de evidencias previas. Los videos se cargan solo al entrar en pantalla, se muestran silenciados y en bucle, se pausan al salir de la vista o cambiar de proyecto y ofrecen control de reproducción/pausa en ES/EN. Si se solicita movimiento reducido o el navegador señala ahorro de datos, no se reproducen automáticamente. El usuario puede activarlos manualmente.
+
+**Nota:** un clip de portada no constituye una demostración funcional del servicio. No se crearon enlaces a código privado ni se publicaron datos reales de usuarios o clientes.
