@@ -95,3 +95,15 @@ test('Appointments card does not link to discontinued backend and database', () 
   assert.match(dict.es['turnos.status'], /fuera de servicio/);
   assert.match(dict.en['turnos.status'], /offline/);
 });
+
+test('Aromatization manager is named by its business domain in Spanish and English',()=>{
+  for(const lang of ['es','en']){
+    assert.ok(/aromati|scent/i.test(dict[lang]['offline.title']));
+    assert.ok(/aromati|scent/i.test(dict[lang]['offline.desc']));
+    assert.ok(/aromati|scent|cliente|client/i.test(dict[lang]['wb.desc.offline']));
+    for(const key of ['offline.localKicker','offline.localLabel','offline.remoteLabel','wb.media.offline.n0','wb.media.offline.n1','wb.media.offline.n2']) {
+      assert.ok(dict[lang][key],lang+' missing '+key);
+    }
+    assert.doesNotMatch(dict[lang]['offline.title'],/Offline-first/i);
+  }
+});

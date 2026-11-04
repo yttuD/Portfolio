@@ -26,8 +26,8 @@ O usar cualquier servidor de archivos estáticos. Abrir `index.html` directament
 - **Rendo**: beta pública y caso de estudio propio, sin enlace al código privado. No modificar la visibilidad de su repositorio sin autorización.
 - **TransAI**: trabajo académico colaborativo, caso descriptivo; código privado.
 - **Sistema de turnos**: enlace a repositorio público existente.
-- **Offline-first**: descripción técnica anonimizada. No contiene nombre ni datos del cliente.
-- Rendo muestra una captura pública actual de su beta. Turnos muestra una captura histórica del frontend, **sin enlace a una demo funcional** porque su backend y su base de datos ya no están desplegados. TransAI y el sistema offline-first muestran diagramas explicativos. Cada imagen está etiquetada con su procedencia.
+- **Gestor de Aromatizantes** (`/work/offline/`): descripción de clientes, equipos instalados, mantenimiento, fragancias, inventario, cobros y reportes, sin código ni información confidencial del cliente. Offline-first es un componente arquitectónico.
+- Rendo muestra una captura pública actual de su beta. Turnos muestra una captura histórica del frontend, **sin enlace a una demo funcional** porque su backend y su base de datos ya no están desplegados. TransAI y el Gestor de Aromatizantes muestran diagramas explicativos (no capturas de una aplicación terminada). Cada imagen está etiquetada con su procedencia.
 - Se publica únicamente el correo profesional autorizado por el propietario. No se publican teléfonos, claves, métricas inventadas ni información confidencial.
 
 ## Cambios editoriales
@@ -68,7 +68,7 @@ El README que aparece en https://github.com/yttuD se administra en el repositori
 - `assets/mi-ciclo-monolito-home.png` y `assets/mi-ciclo-monolito-descubrir.png`: capturas documentadas de la rama `Monolito`, con datos de prueba; no de la demo inicial.
 - `assets/rendo-beta-live.webp` y `assets/turnos-frontend-live.webp`: capturas públicas de Chromium tomadas el 4/11/2026 y optimizadas para web.
 - TransAI se presenta mediante un diagrama de arquitectura elaborado con CSS, sin la fotografía de ensayo anterior.
-- El esquema offline-first y la sección de decisiones son visualizaciones explicativas, no evidencia de producción.
+- Los esquemas del gestor de aromatización y la sección de decisiones son visualizaciones explicativas, no evidencia de producción.
 
 **Evidencia de imágenes:** [`docs/VISUAL_EVIDENCE.md`](docs/VISUAL_EVIDENCE.md). Contacto público autorizado: [carlosdualive@gmail.com](mailto:carlosdualive@gmail.com).
 

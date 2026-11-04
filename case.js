@@ -12,7 +12,19 @@ const langButton=document.getElementById('switchCaseLanguage');
 const layerBtns=[...document.querySelectorAll('[data-layer]')];let selected=0;
 function setLanguage(next){
   lang=next;const txt=data[next],ui=labels[next];document.documentElement.lang=next;
-  document.title=data.name+' — '+(next==='es'?'Caso de estudio':'Case study')+' | Carlos Dualibe';
+  const caseName=txt.name||data.name;
+  document.title=caseName+' — '+(next==='es'?'Caso de estudio':'Case study')+' | Carlos Dualibe';
+  const productName=document.getElementById('caseProductName');
+  if(productName)productName.textContent=caseName;
+  if(Array.isArray(txt.steps))document.querySelectorAll('[data-aroma-step]').forEach(el=>{
+    const step=txt.steps[Number(el.dataset.aromaStep)];
+    if(step){el.querySelector('h3').textContent=step[0];el.querySelector('p').textContent=step[1];}
+  });
+  if(Array.isArray(txt.flow))document.querySelectorAll('[data-aroma-flow]').forEach(el=>{
+    el.textContent=txt.flow[Number(el.dataset.aromaFlow)]||el.textContent;
+  });
+  const process=document.querySelector('.aroma-process');
+  if(process&&txt.processLabel)process.setAttribute('aria-label',txt.processLabel);
   for(const [id,key] of [['caseCategory','tag'],['caseSummary','summary'],['caseStatus','state'],['caseRole','role'],['caseProblem','problem'],['caseSolution','solution'],['caseEvidence','evidence'],['caseCurrent','evidence'],['caseTakeaway','takeaway'],['caseStatusDetail','evidence']]){const el=document.getElementById(id);if(el)el.textContent=txt[key]}
   document.getElementById('caseProblemTitle').textContent=next==='es'?'El problema real.':'The real problem.';
   document.querySelectorAll('[data-i18n-case]').forEach(el=>{const key=el.dataset.i18nCase;if(ui[key])el.textContent=ui[key]});
@@ -30,7 +42,7 @@ function setLanguage(next){
     ['.skip','textContent',ui.skip],
     ['.case-local-nav','aria-label',ui.navName],
     ['#closeLightbox','aria-label',ui.closeImage],
-    ['.case-diagram','aria-label',ui.conceptAlt]
+    ['.case-diagram','aria-label',txt.diagramAlt||ui.conceptAlt]
   ];
   for(const [selector,attribute,value] of accessibleText){
     const element=document.querySelector(selector);
