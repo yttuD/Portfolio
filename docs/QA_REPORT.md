@@ -46,3 +46,19 @@ Para convenciones y la arquitectura del portafolio, ver `docs/WORKBENCH_V2.md` y
 - **Pruebas de navegador:** 12/12 combinaciones con Chromium en los tres casos y cuatro resoluciones (1440, 768, 390 y 320 px). En todas cargaron las imágenes, se conservó su relación de aspecto y funcionaron idioma ES/EN y ampliación opcional. No se registraron errores JavaScript ni desbordamientos horizontales.
 - **Pruebas automatizadas:** 23/23 PASS y `node --check case.js` PASS.
 - La documentación detallada de procedencia de cada imagen está en `docs/VISUAL_EVIDENCE.md`.
+
+## Corrección de vistas previas en Workbench — 2026-11-04
+
+**Problema detectado:** en la portada, el explorador seguía usando una tarjeta `wb-shot` con altura fija de 315 px y `object-fit: cover`, pese a la corrección previa de las páginas individuales. Esto recortaba Rendo, Mi Ciclo y Turnos.
+
+**Cambios:** se eliminó `wb-shot` del HTML del explorador y se reemplazó por composiciones según la naturaleza del proyecto:
+- **Rendo:** portada auténtica completa (1050 × 656) y detalle real del catálogo (700 × 460, identificado como recorte editorial); las leyendas están fuera de las imágenes.
+- **Mi Ciclo:** dos capturas verticales completas (390 × 2047 y 390 × 844), dispuestas como pantallas móviles, con datos de prueba.
+- **Turnos:** captura histórica completa (1000 × 625), sin sugerir que exista una demo operativa.
+- **TransAI / Offline-first:** diagramas conceptuales claramente identificados, no capturas ficticias.
+- Se sumaron textos y alternativas accesibles en ES/EN, manteniendo navegación por teclado, etiquetas del estado del proyecto y rutas a casos de estudio.
+
+**Verificación anterior a publicación:**
+- `node --check app.js` y `node --test tests/*.test.mjs`: **25/25 PASS**.
+- Chromium local: explorador completo en **1440, 1024, 768, 390 y 320 px**. Cinco proyectos en cada tamaño, carga y decodificación de capturas, relación de aspecto nativa, ausencia de recortes y de desbordamiento horizontal, navegación por teclado, cambio de idioma ES/EN; **PASS**.
+- No se añadió ni modificó ninguna ruta a repositorios privados, ni se habilitó un enlace hacia la API descontinuada de Turnos.
