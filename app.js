@@ -2,6 +2,32 @@
   'use strict';
   const translations = {
     es: {
+      'wb.type.rendo': "Beta pública",
+      'wb.type.mi-ciclo': "Cliente · En desarrollo",
+      'wb.type.transai': "Académico · Colaborativo",
+      'wb.type.turnos': "Frontend histórico",
+      'wb.type.offline': "Cliente · Privado",
+      'wb.desc.rendo': "Disponibilidad, propiedades y reservas dentro de una misma plataforma.",
+      'wb.open': "VER CASO DE ESTUDIO ↗",
+      'wb.desc.mi-ciclo': "Bienestar, seguimiento y experiencia móvil con privacidad.",
+      'wb.desc.transai': "Servicios de inspección visual y revisión humana.",
+      'wb.desc.turnos': "Reservas y validación de disponibilidad; backend fuera de servicio.",
+      'wb.desc.offline': "Persistencia local y reconciliación para operar sin conexión.",
+      'wb.title': "Elegí un producto.<br>Entendé cómo funciona.",
+      'wb.subtitle': "Un recorrido interactivo por cinco trabajos. Capturas auténticas cuando existen y decisiones técnicas donde importa.",
+      'wb.detail': "VER HISTORIA Y ARQUITECTURA ↗",
+      'journey.title': "Aprender. Construir. Entregar.",
+      'journey.intro': "Mi experiencia combina formación, productos propios y trabajo real para clientes.",
+      'journey.university': "Formación en programación",
+      'journey.universityDesc': "Estudio Programación en la UTN y desarrollo proyectos integradores colaborativos.",
+      'journey.clients': "Software para clientes",
+      'journey.clientsDesc': "Proyectos con necesidades reales, revisiones, privacidad y decisiones de producto.",
+      'journey.engineer': "De la interfaz a los datos",
+      'journey.engineerDesc': "Me interesa conectar APIs, permisos, datos, experiencia y pruebas.",
+      'journey.cv': "EXPLORAR MI CV ↗",
+      'journey.available': "DISPONIBLE PARA EMPLEO REMOTO Y FREELANCE",
+      'wb.cv': "Mi CV ↗",
+
       'decisions.note': 'Esquemas explicativos de decisiones técnicas; no son capturas ni pruebas de ejecución.',
       'decisions.three.desc': 'En productos con información sensible, los permisos viven también en los datos y sus reglas de acceso.',
       'decisions.three.title': 'La privacidad también se diseña.',
@@ -135,6 +161,32 @@
     },
 
     en: {
+      'wb.type.rendo': "Public beta",
+      'wb.type.mi-ciclo': "Client · In development",
+      'wb.type.transai': "University · Team project",
+      'wb.type.turnos': "Historical frontend",
+      'wb.type.offline': "Client · Private",
+      'wb.desc.rendo': "Availability, properties and bookings inside a coherent product.",
+      'wb.open': "VIEW CASE STUDY ↗",
+      'wb.desc.mi-ciclo': "Wellness, personal tracking and a privacy-conscious mobile UX.",
+      'wb.desc.transai': "Visual inspection services with human review.",
+      'wb.desc.turnos': "Booking and availability; backend no longer online.",
+      'wb.desc.offline': "Local persistence and data reconciliation for offline work.",
+      'wb.title': "Choose a product.<br>See how it works.",
+      'wb.subtitle': "Explore five projects. Real screenshots when available, engineering decisions where they matter.",
+      'wb.detail': "EXPLORE STORY AND ARCHITECTURE ↗",
+      'journey.title': "Learn. Build. Ship.",
+      'journey.intro': "My work combines education, personal products and client software.",
+      'journey.university': "Programming education",
+      'journey.universityDesc': "I study programming at UTN and build collaborative university projects.",
+      'journey.clients': "Client software",
+      'journey.clientsDesc': "Work with real needs, iteration, privacy constraints and product decisions.",
+      'journey.engineer': "From UI to data",
+      'journey.engineerDesc': "I connect APIs, permissions, data, user experience and testing.",
+      'journey.cv': "EXPLORE MY RÉSUMÉ ↗",
+      'journey.available': "OPEN TO REMOTE WORK & FREELANCE",
+      'wb.cv': "My résumé ↗",
+
       'decisions.note': 'Explanatory diagrams of technical decisions; not screenshots or execution evidence.',
       'decisions.three.desc': 'With sensitive data, access rules must live in the data layer too.',
       'decisions.three.title': 'Privacy is a design decision.',
@@ -356,6 +408,22 @@
   if (emailCopyButton) emailCopyButton.addEventListener('click', copyContactEmail);
 
   languageToggle.addEventListener('click', () => setLanguage(language === 'es' ? 'en' : 'es'));
+  const wbTabs=[...document.querySelectorAll('[data-wb-id]')];
+  const wbPanels=[...document.querySelectorAll('[data-wb-panel]')];
+  function selectWorkbench(id,focus=false){
+    wbTabs.forEach(tab=>{const on=tab.dataset.wbId===id;tab.classList.toggle('is-active',on);tab.setAttribute('aria-selected',String(on));tab.tabIndex=on?0:-1;if(on&&focus)tab.focus()});
+    wbPanels.forEach(panel=>{panel.hidden=panel.dataset.wbPanel!==id});
+  }
+  wbTabs.forEach((tab,i)=>{
+    tab.addEventListener('click',()=>selectWorkbench(tab.dataset.wbId));
+    tab.addEventListener('keydown',e=>{
+      let next=null;if(['ArrowRight','ArrowDown'].includes(e.key))next=(i+1)%wbTabs.length;
+      if(['ArrowLeft','ArrowUp'].includes(e.key))next=(i-1+wbTabs.length)%wbTabs.length;
+      if(e.key==='Home')next=0;if(e.key==='End')next=wbTabs.length-1;
+      if(next!==null){e.preventDefault();selectWorkbench(wbTabs[next].dataset.wbId,true)}
+    });
+  });
+  if(wbTabs.length)selectWorkbench(wbTabs[0].dataset.wbId);
   setLanguage(language);
 
   function closeMenu() {
