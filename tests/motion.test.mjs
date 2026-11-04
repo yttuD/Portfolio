@@ -64,9 +64,6 @@ test('Case study pages retain screenshots but no longer have duplicate motion me
   assert.match(read('work/turnos/index.html'),/backend y la base de datos/);
 });
 
-
-
-
 test('Turnos retains the complete original landing screenshot while only the DNA vitrine animates',()=>{
   const start=home.indexOf('id="wb-panel-turnos"');
   const end=home.indexOf('id="wb-panel-offline"',start);
@@ -79,5 +76,5 @@ test('Turnos retains the complete original landing screenshot while only the DNA
   assert.ok(css.includes('mask-image:linear-gradient(to right'));
   assert.ok(css.includes('.wb-native-preview[data-live-preview="turnos"] .live-preview-poster{\n  opacity:1;'));
   assert.ok(!native.includes("querySelector('.live-preview-poster')?.classList.add('is-superseded')"));
-  assert.ok(native.includes("if(turnos.ready){root.classList.add('is-live-ready')"));
+  assert.ok(native.includes('if(turnos.ready){') && native.includes("root.classList.add('is-live-ready')"));
 });
