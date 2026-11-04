@@ -64,3 +64,18 @@ test('Case study pages retain screenshots but no longer have duplicate motion me
   assert.match(read('work/turnos/index.html'),/backend y la base de datos/);
 });
 
+
+
+test('Turnos retains the complete original landing screenshot while only the DNA vitrine animates',()=>{
+  const panel=home.match(/id="wb-panel-turnos"[\\s\\S]*?<\\/section>/);
+  assert.ok(panel,'Turnos Workbench panel missing');
+  assert.match(panel[0],/class="live-preview-poster" src="\\/assets\\/turnos-frontend-live\\.webp"/);
+  assert.match(panel[0],/class="live-native-stage live-turnos-stage" data-turnos-canvas/);
+  assert.match(css,/\\.wb-native-preview\\[data-live-preview="turnos"\\] \\.live-native-stage\\{/);
+  assert.match(css,/top:8\\.8%/);
+  assert.match(css,/left:46%/);
+  assert.match(css,/mask-image:linear-gradient\\(to right/);
+  assert.match(css,/\\[data-live-preview="turnos"\\] \\.live-preview-poster\\{\\s*opacity:1/);
+  assert.doesNotMatch(native,/querySelector\\('\\.live-preview-poster'\\)\\?\\.classList\\.add\\('is-superseded'\\)/);
+  assert.match(native,/if\\(turnos\\.ready\\)\\{root\\.classList\\.add\\('is-live-ready'\\)/);
+});
