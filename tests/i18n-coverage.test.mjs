@@ -74,3 +74,11 @@ test('Bilingual copy action has success and fallback feedback', () => {
   }
   assert.ok(js.includes("emailCopyButton.addEventListener('click'"));
 });
+test('Mi Ciclo cards describe the product, not its source branch', () => {
+  for (const locale of ['es', 'en']) {
+    for (const key of ['wellness.monolito', 'wellness.backdropTitle', 'wellness.photoLabel', 'wellness.caption', 'wellness.evidence', 'wellness.privacy', 'a11y.wellnessFigure', 'a11y.wellnessHome', 'a11y.wellnessAlt', 'a11y.wellnessDiscover']) {
+      assert.doesNotMatch(dict[locale][key], /Monolito|rama|branch|repositorio|repository/i, locale + ': ' + key);
+    }
+  }
+  assert.ok(html.includes('>MI CICLO</b>'));
+});
