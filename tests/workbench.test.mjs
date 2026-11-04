@@ -82,5 +82,43 @@ test('Case studies localize metadata, image descriptions and beta URLs', () => {
   assert.ok(code.includes("link.href='https://rendo-beta-web.vercel.app/'+next"));
   assert.ok(code.includes("description.content=txt.summary"));
   assert.ok(code.includes("ogDescription.content=txt.summary"));
-  assert.ok(code.includes("querySelectorAll('.case-image-trigger img')"));
+  assert.ok(code.includes("querySelectorAll('.case-evidence__viewport img')"));
+});
+
+test('Case study screenshots preserve native aspect ratio and use editorial layouts', () => {
+  const css = read('case.css');
+  assert.match(css, /Evidence gallery v3: proof should be fully readable/);
+  assert.match(css, /case-evidence__viewport img/);
+  assert.match(css, /height:auto!important/);
+  assert.match(css, /object-fit:contain!important/);
+  const rendo = read('work/rendo/index.html');
+  assert.match(rendo, /case-gallery--editorial/);
+  for (const image of ['rendo-home-clear.webp', 'rendo-catalog-detail.webp']) {
+    assert.ok(rendo.includes('/assets/' + image), 'Missing Rendo evidence ' + image);
+    assert.ok(existsSync(join(root, 'assets', image)), 'Asset not committed: ' + image);
+  }
+  assert.match(rendo, /evidenceCatalogNote/);
+  assert.match(rendo, /case-gallery__details/);
+  assert.doesNotMatch(rendo, /class="image-cta"/, 'No overlay should obscure actual screen content');
+  const miCiclo = read('work/mi-ciclo/index.html');
+  assert.match(miCiclo, /case-gallery--mobile/);
+  assert.match(miCiclo, /width="390" height="2047"/, 'Keep full long phone screenshot');
+  assert.match(miCiclo, /width="390" height="844"/, 'Keep Discover screen proportions');
+  const turnos = read('work/turnos/index.html');
+  assert.match(turnos, /case-gallery--single/);
+  assert.match(turnos, /height="625"/);
+  assert.doesNotMatch(turnos, /clinica-san-martin-tpi-self\.vercel\.app/);
+});
+test('Evidence captions and specific accessible descriptions are bilingual', () => {
+  const code = read('case.js');
+  for (const key of ['evidenceHomeTitle','evidenceCatalogTitle','evidenceCatalogNote','evidenceMobileHomeTitle','evidenceMobileDiscoverTitle','evidenceTurnosTitle']) {
+    assert.ok(code.includes(key + ':'), 'Missing evidence translation: ' + key);
+  }
+  assert.ok(code.includes('el.dataset.altEs:el.dataset.altEn'));
+  for (const name of ['rendo','mi-ciclo','turnos']) {
+    const doc = read('work/' + name + '/index.html');
+    assert.match(doc, /data-alt-es=/);
+    assert.match(doc, /data-alt-en=/);
+    assert.match(doc, /<figcaption/);
+  }
 });
