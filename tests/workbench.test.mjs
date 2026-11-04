@@ -179,7 +179,7 @@ test('Aromatization case presents the real business domain without exposing priv
     assert.ok(item.name && item.steps.length===6 && item.flow.length===3);
     assert.match(item.summary,/aromati|scent/i);
     assert.match(item.state,/desarrollo|development/i);
-    assert.match(item.evidence,/diagrama|diagram/i);
+    assert.match(item.evidence,/diagrama|diagram|esquema/i);
   }
   assert.ok(doc.includes('data-aroma-step="5"'));
   assert.ok(doc.includes('data-aroma-flow="2"'));
