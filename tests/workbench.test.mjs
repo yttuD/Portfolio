@@ -141,11 +141,11 @@ test('Workbench project previews render full screenshots without legacy cropped 
     assert.ok(existsSync(join(root,'assets',asset)), 'Missing evidence file '+asset);
   }
   assert.ok(read('work/rendo/index.html').includes('width="1050" height="656"'), 'Rendo case study must retain its complete static screenshot');
-  assert.ok(index.includes('poster="/assets/rendo-home-clear.webp"'), 'Rendo motion must preserve a full static poster');
+  assert.ok(index.includes('class="live-preview-poster" src="/assets/rendo-home-clear.webp"'), 'Rendo native preview must preserve a full static poster');
   assert.ok(index.includes('width="390" height="2047"'), 'Mi Ciclo full-length screenshot must not be cropped');
   assert.ok(index.includes('width="390" height="844"'), 'Mi Ciclo Discover screenshot must not be cropped');
   assert.ok(read('work/turnos/index.html').includes('width="1000" height="625"'), 'Turnos case study must retain its complete static screenshot');
-  assert.ok(index.includes('poster="/assets/turnos-frontend-live.webp"'), 'Turnos motion must preserve the historical poster');
+  assert.ok(index.includes('class="live-preview-poster" src="/assets/turnos-frontend-live.webp"'), 'Turnos native preview must preserve the historical poster');
 });
 test('Workbench previews explain genuine cropped details and preserve bilingual accessibility', () => {
   const app = read('app.js');
@@ -153,7 +153,7 @@ test('Workbench previews explain genuine cropped details and preserve bilingual 
     'wb.media.mi.altHome','wb.media.mi.altDiscover','wb.media.mi.private','wb.media.turnos.status','wb.media.diagramLabel'];
   for (const key of keys) {
     assert.ok(index.includes('data-i18n="'+key+'"') || index.includes('data-i18n-alt="'+key+'"') ||
-      (key==='wb.media.rendo.altHome' && index.includes('data-motion-alt-es="Vista animada de la beta pública de Rendo"')) ||
+      (key==='wb.media.rendo.altHome' && index.includes('data-live-preview="rendo"')) ||
       key==='wb.media.mi.private', 'Missing UI key '+key);
     const count = app.split(JSON.stringify(key) + ":").length - 1;
     assert.ok(count >= 2, "Missing ES/EN translation: "+key);

@@ -42,3 +42,13 @@ Las animaciones de los casos Rendo y Turnos proceden de **grabaciones del fronte
 **Integración:** se conservan las capturas completas como imagen de respaldo (`poster`) y las descripciones de evidencias previas. Los videos se cargan solo al entrar en pantalla, se muestran silenciados y en bucle, se pausan al salir de la vista o cambiar de proyecto y ofrecen control de reproducción/pausa en ES/EN. Si se solicita movimiento reducido o el navegador señala ahorro de datos, no se reproducen automáticamente. El usuario puede activarlos manualmente.
 
 **Nota:** un clip de portada no constituye una demostración funcional del servicio. No se crearon enlaces a código privado ni se publicaron datos reales de usuarios o clientes.
+
+## Animaciones nativas del Workbench — 2026-11-04
+
+Se reemplazaron los clips WebM de baja resolución por **código visual ejecutado en el navegador** y se eliminaron los archivos de video anteriores. El movimiento existe exclusivamente en el explorador de la portada; los casos individuales conservan las capturas completas.
+
+- **Rendo:** adaptación selectiva de \`CityBackground.tsx\` de la beta privada (procedimiento Mulberry32 con semillas 7 y 1337, 55 estrellas, 14 estructuras urbanas, ventanas, grúas y \`twinkle/growUp\`). Sólo se reutiliza código visual; no se exponen secretos ni lógica privada del producto.
+- **Turnos:** adaptación de \`DNA3D.tsx\` del proyecto público, mediante Three.js 0.185.1 (16 nodos, radio 2.5, paso 0.8, ángulo π/4, materiales cian/violeta, giro Y y oscilación Z originales). La dependencia se carga de manera diferida **sólo cuando la tarjeta está visible**, y no se incluye ningún servicio de backend.
+- **Interacción:** hacer clic en la vista abre el caso de estudio correspondiente. Rendo tiene además un enlace directo a la beta pública que respeta el idioma.
+- **Rendimiento y accesibilidad:** SVG/CSS y WebGL se ejecutan a la tasa de refresco del navegador, sin límite artificial de 10 FPS ni compresión de video; la animación se pausa al salir de la vista, cambiar de tarjeta, ocultar la página o solicitar movimiento reducido. Se conserva la captura original como respaldo si falla WebGL.
+- **Responsabilidad:** Turnos continúa señalado como frontend histórico, sin backend ni base de datos activos. El uso de una animación visual no implica una demo funcional.

@@ -1,0 +1,47 @@
+/* Native animations selectively adapted from Rendo CityBackground and Turnos DNA3D. */
+.wb-native-preview{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;background:#0a1226;isolation:isolate}
+.wb-native-preview .live-preview-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:1;transition:opacity .25s}
+.wb-native-preview .live-preview-poster.is-superseded{opacity:0}
+.wb-native-preview .live-native-stage{position:absolute;inset:0;overflow:hidden}
+.wb-native-preview .live-native-link{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-end;padding:16px;z-index:3;color:#f3f9ed;text-decoration:none}
+.wb-native-preview .live-native-link span{font:700 11px/1.5 var(--mono,monospace);background:#0b1428da;border:1px solid #91a88e;padding:10px 13px;border-radius:3px}
+.wb-native-preview .live-native-link:hover span,.wb-native-preview .live-native-link:focus-visible span{color:#d5f58c;border-color:#d5f58c}
+.wb-native-preview .live-native-link:focus-visible{outline:3px solid #d5f58c;outline-offset:-5px}
+.live-city-scene{position:relative;width:100%;height:100%;background:linear-gradient(180deg,#0a1226,#101a35 57%,#0a1226)}
+.live-city-stars{position:absolute;inset:0}
+.live-city-star{position:absolute;border-radius:50%;animation:live-city-twinkle ease-in-out infinite}
+.live-city-skyline{position:absolute;inset:auto 0 0;height:83%;mask-image:linear-gradient(to top,black 45%,transparent 100%)}
+.live-city-skyline svg{display:block;width:100%;height:100%}
+.live-city-distant{fill:#16213d;opacity:.35}
+.live-city-structure{transform-box:fill-box;transform-origin:50% 100%;animation:live-city-grow var(--duration) var(--delay) cubic-bezier(.33,.9,.4,1) infinite}
+.live-city-details{animation:live-city-details var(--duration) var(--delay) ease-in-out infinite}
+.live-city-scaffold{animation:live-city-scaffold var(--duration) var(--delay) linear infinite}
+.live-city-crane{animation:live-city-scaffold var(--duration) var(--delay) linear infinite}
+.live-city-crane line{stroke:#b7904d;stroke-width:1.6;stroke-linecap:round;opacity:.55}
+.live-city-lit{animation:live-city-twinkle ease-in-out infinite}
+.live-city-brand{position:absolute;left:9%;top:15%;pointer-events:none;text-shadow:0 3px 16px #050d22}
+.live-city-brand>span{color:#d8b876;font:500 10px var(--mono,monospace);letter-spacing:.08em}
+.live-city-brand strong{display:block;margin-top:9px;font:800 clamp(40px,7vw,82px)/1 var(--sans,system-ui);letter-spacing:-.09em;color:#f5ecdf}
+.live-city-brand strong span{color:#d8b876}
+@keyframes live-city-twinkle{0%,100%{opacity:.15}50%{opacity:.85}}
+@keyframes live-city-grow{0%{transform:scaleY(0);opacity:0}6%{opacity:1}30%,88%{transform:scaleY(1);opacity:1}100%{transform:scaleY(0);opacity:0}}
+@keyframes live-city-details{0%,32%{opacity:0}40%,88%{opacity:1}100%{opacity:0}}
+@keyframes live-city-scaffold{0%,3%{opacity:0}9%,27%{opacity:.35}35%,100%{opacity:0}}
+.wb-native-preview:not(.is-live-playing) .live-city-scene *{animation-play-state:paused!important}
+.live-turnos-stage{width:100%;height:100%;background:radial-gradient(ellipse at center,#193f51,#121933 61%,#0b1325);position:relative}
+.live-turnos-canvas{position:absolute;inset:0;width:100%;height:100%}
+.live-turnos-canvas canvas{display:block;width:100%;height:100%}
+.live-turnos-label{position:absolute;left:7%;top:10%;font:500 10px var(--mono,monospace);color:#b9f0f9;letter-spacing:.08em;pointer-events:none}
+.wb-native-actions{display:flex;gap:20px;flex-wrap:wrap;padding:4px 3px 10px}
+.wb-native-actions a{font:700 11px var(--mono,monospace);color:#d5f58c;border-bottom:1px solid #759768;padding-bottom:7px}
+.wb-native-actions a:hover{color:#f4ffe6}
+@media(max-width:620px){.live-city-brand strong{font-size:clamp(36px,12vw,65px)}.wb-native-preview .live-native-link{padding:10px}.wb-native-preview .live-native-link span{font-size:10px;padding:8px 10px}}
+@media(prefers-reduced-motion:reduce){.wb-native-preview .live-city-scene *{animation-play-state:paused!important}.wb-native-preview .live-preview-poster{transition:none}}
+
+
+/* Posters remain visible if native scene cannot initialize. */
+.wb-native-preview .live-native-stage{opacity:0;transition:opacity .2s}
+.wb-native-preview.is-live-ready .live-native-stage{opacity:1}
+.wb-native-beta-link{color:#d5f58c;border-bottom:1px solid #9ab68c;text-decoration:none;padding-bottom:2px;font:700 10px/1.5 var(--mono,monospace)}
+.wb-native-beta-link:hover{color:#f5ffe6}
+@media(prefers-reduced-motion:reduce){.wb-native-preview .live-native-stage{transition:none}}

@@ -76,3 +76,10 @@ Para convenciones y la arquitectura del portafolio, ver `docs/WORKBENCH_V2.md` y
 - **Chromium sobre producción:** Rendo y Turnos reprodujeron WebM reales con `currentTime > 0`; la pausa/reanudación manual funcionó; al cambiar de proyecto se pausó el anterior; las notas de Turnos cambiaron correctamente a inglés; con `prefers-reduced-motion: reduce` no hubo reproducción automática, pero sí reproducción iniciada por el usuario. La prueba móvil no detectó desbordamiento horizontal.
 - Despliegue Vercel del arreglo de binarios `2ad81c1`: `READY` en producción.
 - Los clips se cargan al entrar en pantalla, están silenciados, tienen bucle y ofrecen botón de reproducción/pausa. Los recursos visuales completos continúan disponibles en los casos de estudio.
+
+## Animación nativa en tarjetas — revisión 2026-11-04
+
+- **Problema resuelto:** los videos WebM anteriores se habían exportado a 640–720 px y 10 FPS. No eran adecuados para imágenes grandes en una web de portafolio.
+- **Solución:** se retiraron los videos y sus reproductores de la portada y los casos de estudio. Dos tarjetas del Workbench contienen animaciones nativas, basadas en \`CityBackground.tsx\` (Rendo) y \`DNA3D.tsx\` (Turnos).
+- **Pruebas locales:** 30/30 pruebas del repositorio PASS; comprobación con Playwright/Chromium a 1440, 768, 390 y 320 píxeles: 55 estrellas, 14 estructuras, animaciones CSS en ejecución, instancia WebGL 3D lista, navegación por tarjetas y cambio ES/EN correctos. En movimiento reducido no se inicializa WebGL ni hay animación CSS.
+- **Verificaciones pendientes para release:** comprobar en producción que el nuevo JS se entrega íntegro y que la tarjeta Rendo abre el caso y ofrece la beta pública. No confundir estado READY con prueba funcional.

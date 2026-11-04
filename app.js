@@ -2,6 +2,11 @@
   'use strict';
   const translations = {
     es: {
+      "wb.live.open": "EXPLORAR CASO ↗",
+      "wb.live.beta": "VISITAR BETA REAL ↗",
+      "wb.live.case": "VER CASO ↗",
+      "wb.live.rendo.aria": "Abrir caso de estudio de Rendo",
+      "wb.live.turnos.aria": "Abrir caso de estudio del sistema de turnos",
       "wb.media.rendo.altHome": "Portada completa de la beta pública de Rendo, sin recortes",
       "wb.media.rendo.altCatalog": "Detalle del catálogo público de Rendo, recortado intencionalmente",
       "wb.media.rendo.home": "01 / PORTADA PÚBLICA",
@@ -191,6 +196,11 @@
     },
 
     en: {
+      "wb.live.open": "EXPLORE CASE ↗",
+      "wb.live.beta": "VISIT LIVE BETA ↗",
+      "wb.live.case": "VIEW CASE ↗",
+      "wb.live.rendo.aria": "Open Rendo case study",
+      "wb.live.turnos.aria": "Open appointment system case study",
       "wb.media.rendo.altHome": "Complete, uncropped screenshot of Rendo's public beta homepage",
       "wb.media.rendo.altCatalog": "Authentic, intentionally cropped detail of Rendo's public property catalog",
       "wb.media.rendo.home": "01 / PUBLIC HOMEPAGE",
