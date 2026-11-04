@@ -4,12 +4,12 @@ Fecha: 4 de noviembre de 2026
 ## Estado de publicación
 - Repositorio: `yttuD/Portfolio`, rama `main`.
 - Producción: `https://carlos-dualibe.vercel.app/`.
-- El despliegue `0e11e51` fue verificado en Vercel con estado `READY`.
+- El despliegue final de las galerías `c593f05` fue verificado en Vercel con estado `READY`.
 - No se utilizó GitHub Actions; Vercel despliega automáticamente desde GitHub.
 
 ## Resultados verificados
 - `node --check app.js` y `node --check case.js`: PASS en el despliegue probado.
-- `node --test tests/*.test.mjs`: **21/21 PASS** sobre `61c7d5d`.
+- `node --test tests/*.test.mjs`: **23/23 PASS** sobre `c593f05`.
 - HTTP 200 de la portada y ambas descargas PDF. Las rutas con barra final redireccionan de forma canónica según configuración `cleanUrls`.
 - CV ES y EN: PDF A4 de una página. Los símbolos no soportados de listas se reemplazaron por guiones ASCII y se mantuvieron los contenidos sin nivel de inglés inventado.
 - Cinco rutas `/work/`: Rendo, Mi Ciclo, TransAI, Turnos y Offline-first.
@@ -34,3 +34,15 @@ Fecha: 4 de noviembre de 2026
 - Queda pendiente confirmar el nivel de inglés con una prueba antes de declararlo en el CV.
 
 Para convenciones y la arquitectura del portafolio, ver `docs/WORKBENCH_V2.md` y `docs/VISUAL_EVIDENCE.md`.
+
+## Auditoría final de imágenes — 2026-11-04
+
+- Referencia: commit `c593f05`, Vercel Production `READY`.
+- Se reemplazaron las tarjetas de captura con altura fija y `object-fit: cover` por composiciones editoriales con `height: auto` y `object-fit: contain`.
+- **Rendo:** portada pública completa de 1050 × 656 px + detalle real del catálogo de 700 × 460 px, identificado como recorte intencional.
+- **Mi Ciclo:** capturas verticales completas de 390 × 2047 y 390 × 844 px con datos de prueba.
+- **Turnos:** captura histórica completa de 1000 × 625 px, sin redireccionar al despliegue descontinuado.
+- Los archivos nuevos se verificaron por su tamaño real en GitHub y Vercel; no se consideran válidos blobs parciales o corruptos.
+- **Pruebas de navegador:** 12/12 combinaciones con Chromium en los tres casos y cuatro resoluciones (1440, 768, 390 y 320 px). En todas cargaron las imágenes, se conservó su relación de aspecto y funcionaron idioma ES/EN y ampliación opcional. No se registraron errores JavaScript ni desbordamientos horizontales.
+- **Pruebas automatizadas:** 23/23 PASS y `node --check case.js` PASS.
+- La documentación detallada de procedencia de cada imagen está en `docs/VISUAL_EVIDENCE.md`.
