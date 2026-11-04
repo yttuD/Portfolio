@@ -96,3 +96,10 @@ dialog{max-width:92vw;max-height:90vh;border:1px solid #809383;background:#121d1
 }
 @media(prefers-reduced-motion:reduce){.case-evidence__expand.case-image-trigger{transition:none!important}}
 
+/* Final fidelity pass: avoid upscaling beyond the screenshots' actual pixels.
+   Phone images have no inset border that could alter their natural aspect ratio. */
+.case-gallery--editorial .case-evidence--hero .case-evidence__viewport img{max-width:1050px}
+.case-gallery--editorial .case-evidence--detail .case-evidence__viewport img{max-width:700px}
+.case-gallery--single .case-evidence__viewport img{max-width:1000px}
+.case-gallery--mobile .case-evidence__viewport img{border:0}
+
