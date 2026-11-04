@@ -2,6 +2,16 @@
 
 Portafolio de desarrollador Full Stack en español e inglés. Una experiencia editorial e interactiva realizada con HTML semántico, CSS y JavaScript nativo: **sin build, sin APIs externas, sin servicios pagos ni dependencias para funcionar**. Preparado para desplegarse en Vercel.
 
+## Nueva experiencia Workbench
+
+- **Explorador de proyectos** en la portada, con pestañas accesibles y navegación con teclado.
+- **Cinco casos bilingües** en `/work/{rendo|mi-ciclo|transai|turnos|offline}/`, incluyendo decisiones y límites de cada evidencia.
+- **Trayectoria profesional** y currículums de una página en `/cv/` (PDF español e inglés).
+- **Estado honesto**: Turnos conserva una captura histórica, pero no enlaza una API descontinuada.
+- **Sin código de clientes**: los recursos publicados son capturas seleccionadas y esquemas técnicos.
+
+Ver documentación: [Workbench v2](docs/WORKBENCH_V2.md).
+
 ## Uso local
 
 ```bash
@@ -13,7 +23,7 @@ O usar cualquier servidor de archivos estáticos. Abrir `index.html` directament
 
 ## Contenido y privacidad
 
-- **Rendo**: solo enlace a la demo; no enlace al código. No modificar la visibilidad de su repositorio sin autorización.
+- **Rendo**: beta pública y caso de estudio propio, sin enlace al código privado. No modificar la visibilidad de su repositorio sin autorización.
 - **TransAI**: trabajo académico colaborativo, caso descriptivo; código privado.
 - **Sistema de turnos**: enlace a repositorio público existente.
 - **Offline-first**: descripción técnica anonimizada. No contiene nombre ni datos del cliente.
@@ -25,6 +35,10 @@ O usar cualquier servidor de archivos estáticos. Abrir `index.html` directament
 El contenido bilingüe principal está en `app.js` y las estructuras en `index.html`. Las etiquetas se marcan con `data-i18n`. Se preserva `lang` y se actualizan títulos/descripciones según idioma.
 
 ## QA
+
+Validar con `node --test tests/*.test.mjs`. Las páginas individuales usan `case.js` y `case.css` compartidos, sin dependencias externas de JavaScript.
+
+
 
 - Semántica: `main`, `nav`, `section`, etiquetas y encabezados jerárquicos.
 - Accesibilidad: navegación por teclado, skip link, menú móvil controlado, `prefers-reduced-motion`, estados de foco.

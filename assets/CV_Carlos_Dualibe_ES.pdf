@@ -7,7 +7,7 @@ endobj
 << /Type /Pages /Kids [3 0 R] /Count 1 >>
 endobj
 3 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.276 841.890] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.276 841.89] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
 endobj
 4 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
@@ -16,49 +16,49 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
 endobj
 6 0 obj
-<< /Length 4639 >>
+<< /Length 4105 >>
 stream
-BT /F2 27 Tf 0.12 0.17 0.13 rg 1 0 0 1 47 792 Tm (Carlos Dualibe) Tj ET
-BT /F2 10 Tf 0.15 0.39 0.22 rg 1 0 0 1 48 769 Tm (DESARROLLADOR FULL STACK) Tj ET
-BT /F1 8.4 Tf 0.12 0.17 0.13 rg 1 0 0 1 48 748 Tm (Argentina  |  Remote / Freelance  |  carlosdualive@gmail.com) Tj ET
-BT /F1 8.4 Tf 0.15 0.39 0.22 rg 1 0 0 1 48 733 Tm (github.com/yttuD  |  carlos-dualibe.vercel.app) Tj ET
-0.16 0.37 0.21 RG 0.9 w 48 716 m 547 716 l S
-BT /F1 8.8 Tf 0.12 0.17 0.13 rg 1 0 0 1 48 696 Tm (Desarrollador enfocado en TypeScript, React, APIs y aplicaciones con datos. Trabajo en productos) Tj ET
-BT /F1 8.8 Tf 0.12 0.17 0.13 rg 1 0 0 1 48 681.6 Tm (propios, desarrollos para clientes y proyectos académicos colaborativos, con atención a la) Tj ET
-BT /F1 8.8 Tf 0.12 0.17 0.13 rg 1 0 0 1 48 667.2 Tm (experiencia de usuario, las reglas de negocio y la persistencia.) Tj ET
-BT /F2 10 Tf 0.15 0.39 0.22 rg 1 0 0 1 48 642.8000000000001 Tm (EXPERIENCIA Y PROYECTOS) Tj ET
-0.16 0.37 0.21 RG 0.9 w 48 627.8000000000001 m 547 627.8000000000001 l S
-BT /F2 9.4 Tf 0.12 0.17 0.13 rg 1 0 0 1 48 610.8000000000001 Tm (DESARROLLO PARA CLIENTES) Tj ET
-BT /F1 8.2 Tf 0.12 0.17 0.13 rg 1 0 0 1 59 595.8000000000001 Tm (? Mi Ciclo: aplicación de bienestar mobile-first en desarrollo con Next.js, TypeScript, Supabase y) Tj ET
-BT /F1 8.2 Tf 0.12 0.17 0.13 rg 1 0 0 1 59 583.0000000000001 Tm (  Capacitor. Flujos de usuario, incorporación y consentimiento; código privado.) Tj ET
-BT /F1 8.2 Tf 0.12 0.17 0.13 rg 1 0 0 1 59 566.2000000000002 Tm (? Operaciones empresariales: arquitectura offline-first con TypeScript, SQLite y sincronización remota.) Tj ET
-BT /F1 8.2 Tf 0.12 0.17 0.13 rg 1 0 0 1 59 553.4000000000002 Tm (  Cliente anonimizado y datos protegidos.) Tj ET
-BT /F1 8.2 Tf 0.12 0.17 0.13 rg 1 0 0 1 59 536.6000000000003 Tm (? Comercio web: catálogos, administración y funcionalidades de negocio con Next.js y Firebase.) Tj ET
-BT /F2 9.4 Tf 0.12 0.17 0.13 rg 1 0 0 1 48 514.8000000000003 Tm (PRODUCTOS PROPIOS Y ACADÉMICOS) Tj ET
-BT /F1 8.2 Tf 0.12 0.17 0.13 rg 1 0 0 1 59 499.8000000000003 Tm (? Rendo: plataforma de alquileres con beta pública y código privado. Publicaciones, disponibilidad, reservas) Tj ET
-BT /F1 8.2 Tf 0.12 0.17 0.13 rg 1 0 0 1 59 487.0000000000003 Tm (  y roles con Next.js, NestJS y Supabase.) Tj ET
-BT /F1 8.2 Tf 0.12 0.17 0.13 rg 1 0 0 1 59 470.2000000000003 Tm (? TransAI: proyecto universitario colaborativo de inspección visual con React, Django, Node.js y servicios) Tj ET
-BT /F1 8.2 Tf 0.12 0.17 0.13 rg 1 0 0 1 59 457.40000000000026 Tm (  Python/FastAPI.) Tj ET
-BT /F1 8.2 Tf 0.12 0.17 0.13 rg 1 0 0 1 59 440.60000000000025 Tm (? Turnos: interfaz y lógica de reservas con React, Node.js, Prisma y PostgreSQL. Backend y base de datos) Tj ET
-BT /F1 8.2 Tf 0.12 0.17 0.13 rg 1 0 0 1 59 427.80000000000024 Tm (  actualmente descontinuados.) Tj ET
-BT /F2 10 Tf 0.15 0.39 0.22 rg 1 0 0 1 48 400.0000000000002 Tm (FORMACIÓN) Tj ET
-0.16 0.37 0.21 RG 0.9 w 48 385.0000000000002 m 547 385.0000000000002 l S
-BT /F2 9.4 Tf 0.12 0.17 0.13 rg 1 0 0 1 48 368.0000000000002 Tm (Universidad Tecnológica Nacional \(UTN\)) Tj ET
-BT /F1 8.2 Tf 0.12 0.17 0.13 rg 1 0 0 1 59 353.0000000000002 Tm (? Estudios de Programación en curso.) Tj ET
-BT /F2 10 Tf 0.15 0.39 0.22 rg 1 0 0 1 48 325.2000000000002 Tm (TECNOLOGÍAS) Tj ET
-0.16 0.37 0.21 RG 0.9 w 48 310.2000000000002 m 547 310.2000000000002 l S
-BT /F2 9.4 Tf 0.12 0.17 0.13 rg 1 0 0 1 48 293.2000000000002 Tm (Frontend) Tj ET
-BT /F1 8.2 Tf 0.12 0.17 0.13 rg 1 0 0 1 59 278.2000000000002 Tm (? TypeScript, JavaScript, React, Next.js, Tailwind CSS) Tj ET
-BT /F2 9.4 Tf 0.12 0.17 0.13 rg 1 0 0 1 48 256.4000000000002 Tm (Backend y datos) Tj ET
-BT /F1 8.2 Tf 0.12 0.17 0.13 rg 1 0 0 1 59 241.4000000000002 Tm (? Node.js, NestJS, Python, Django, PostgreSQL, SQLite, Supabase, Firebase) Tj ET
-BT /F2 9.4 Tf 0.12 0.17 0.13 rg 1 0 0 1 48 219.6000000000002 Tm (Herramientas) Tj ET
-BT /F1 8.2 Tf 0.12 0.17 0.13 rg 1 0 0 1 59 204.6000000000002 Tm (? Git, Playwright, Docker, pruebas y documentación técnica) Tj ET
-BT /F2 10 Tf 0.15 0.39 0.22 rg 1 0 0 1 48 176.80000000000018 Tm (DISPONIBILIDAD) Tj ET
-0.16 0.37 0.21 RG 0.9 w 48 161.80000000000018 m 547 161.80000000000018 l S
-BT /F2 9.4 Tf 0.12 0.17 0.13 rg 1 0 0 1 48 144.80000000000018 Tm (Empleo remoto y freelance) Tj ET
-BT /F1 8.2 Tf 0.12 0.17 0.13 rg 1 0 0 1 59 129.80000000000018 Tm (? Disponible para puestos de desarrollo remoto y proyectos de software freelance.) Tj ET
-0.16 0.37 0.21 RG 0.9 w 48 47 m 547 47 l S
-BT /F1 7.2 Tf 0.12 0.17 0.13 rg 1 0 0 1 48 33 Tm (Proyectos y evidencia en el portafolio. Nivel de inglés no declarado sin evaluación.) Tj ET
+BT /F2 27 Tf 0.11 0.18 0.12 rg 1 0 0 1 48 791 Tm (Carlos Dualibe) Tj ET
+BT /F2 10 Tf 0.13 0.36 0.21 rg 1 0 0 1 49 767 Tm (DESARROLLADOR FULL STACK) Tj ET
+BT /F1 8.4 Tf 0.11 0.18 0.12 rg 1 0 0 1 48 745 Tm (Argentina  |  Remote / Freelance  |  carlosdualive@gmail.com) Tj ET
+BT /F1 8.4 Tf 0.12 0.36 0.19 rg 1 0 0 1 48 730 Tm (github.com/yttuD  |  carlos-dualibe.vercel.app) Tj ET
+0.16 0.39 0.23 RG .7 w 48 713 m 547 713 l S
+BT /F1 8.6 Tf 0.11 0.18 0.12 rg 1 0 0 1 48 693 Tm (Desarrollador enfocado en TypeScript, React, APIs y aplicaciones con datos. Trabajo en productos) Tj ET
+BT /F1 8.6 Tf 0.11 0.18 0.12 rg 1 0 0 1 48 679 Tm (propios, software para clientes y proyectos académicos colaborativos, con atención a la) Tj ET
+BT /F1 8.6 Tf 0.11 0.18 0.12 rg 1 0 0 1 48 665 Tm (experiencia de usuario, las reglas de negocio y la persistencia.) Tj ET
+BT /F2 10 Tf 0.12 0.38 0.21 rg 1 0 0 1 48 642 Tm (EXPERIENCIA Y PROYECTOS) Tj ET
+0.16 0.39 0.23 RG .7 w 48 627 m 547 627 l S
+BT /F2 9.15 Tf 0.11 0.18 0.12 rg 1 0 0 1 48 612 Tm (DESARROLLO PARA CLIENTES) Tj ET
+BT /F1 8.1 Tf 0.11 0.18 0.12 rg 1 0 0 1 59 598 Tm (- Mi Ciclo: aplicación de bienestar mobile-first en desarrollo con Next.js, TypeScript, Supabase y) Tj ET
+BT /F1 8.1 Tf 0.11 0.18 0.12 rg 1 0 0 1 59 585.5 Tm (  Capacitor; flujos de usuario y consentimiento. Código privado.) Tj ET
+BT /F1 8.1 Tf 0.11 0.18 0.12 rg 1 0 0 1 59 570 Tm (- Operaciones empresariales: arquitectura offline-first con TypeScript, SQLite y sincronización remota.) Tj ET
+BT /F1 8.1 Tf 0.11 0.18 0.12 rg 1 0 0 1 59 557.5 Tm (  Caso de cliente anonimizado.) Tj ET
+BT /F1 8.1 Tf 0.11 0.18 0.12 rg 1 0 0 1 59 542 Tm (- Comercio web: catálogos, gestión e integraciones usando Next.js y Firebase.) Tj ET
+BT /F2 9.15 Tf 0.11 0.18 0.12 rg 1 0 0 1 48 521.5 Tm (PRODUCTOS Y TRABAJOS ACADÉMICOS) Tj ET
+BT /F1 8.1 Tf 0.11 0.18 0.12 rg 1 0 0 1 59 507.5 Tm (- Rendo: plataforma de alquileres con beta pública y código privado; publicaciones, disponibilidad,) Tj ET
+BT /F1 8.1 Tf 0.11 0.18 0.12 rg 1 0 0 1 59 495 Tm (  reservas y roles. Next.js, NestJS y Supabase.) Tj ET
+BT /F1 8.1 Tf 0.11 0.18 0.12 rg 1 0 0 1 59 479.5 Tm (- TransAI: proyecto universitario colaborativo de inspección visual con React, Django, Node.js y) Tj ET
+BT /F1 8.1 Tf 0.11 0.18 0.12 rg 1 0 0 1 59 467 Tm (  Python/FastAPI.) Tj ET
+BT /F1 8.1 Tf 0.11 0.18 0.12 rg 1 0 0 1 59 451.5 Tm (- Turnos: interfaz y lógica de reservas con React, Node.js, Prisma y PostgreSQL. Backend y base de datos) Tj ET
+BT /F1 8.1 Tf 0.11 0.18 0.12 rg 1 0 0 1 59 439 Tm (  descontinuados.) Tj ET
+BT /F2 10 Tf 0.12 0.38 0.21 rg 1 0 0 1 48 414.5 Tm (FORMACIÓN) Tj ET
+0.16 0.39 0.23 RG .7 w 48 399.5 m 547 399.5 l S
+BT /F2 9.15 Tf 0.11 0.18 0.12 rg 1 0 0 1 48 384.5 Tm (Universidad Tecnológica Nacional \(UTN\)) Tj ET
+BT /F1 8.1 Tf 0.11 0.18 0.12 rg 1 0 0 1 59 370.5 Tm (- Estudios de Programación en curso.) Tj ET
+BT /F2 10 Tf 0.12 0.38 0.21 rg 1 0 0 1 48 346 Tm (TECNOLOGÍAS) Tj ET
+0.16 0.39 0.23 RG .7 w 48 331 m 547 331 l S
+BT /F2 9.15 Tf 0.11 0.18 0.12 rg 1 0 0 1 48 316 Tm (Frontend) Tj ET
+BT /F1 8.1 Tf 0.11 0.18 0.12 rg 1 0 0 1 59 302 Tm (- TypeScript, React, Next.js, JavaScript, Tailwind CSS) Tj ET
+BT /F2 9.15 Tf 0.11 0.18 0.12 rg 1 0 0 1 48 281.5 Tm (Backend y datos) Tj ET
+BT /F1 8.1 Tf 0.11 0.18 0.12 rg 1 0 0 1 59 267.5 Tm (- Node.js, NestJS, Python, Django, PostgreSQL, SQLite, Supabase, Firebase) Tj ET
+BT /F2 9.15 Tf 0.11 0.18 0.12 rg 1 0 0 1 48 247 Tm (Prácticas) Tj ET
+BT /F1 8.1 Tf 0.11 0.18 0.12 rg 1 0 0 1 59 233 Tm (- Git, Playwright, Docker, pruebas y documentación técnica) Tj ET
+BT /F2 10 Tf 0.12 0.38 0.21 rg 1 0 0 1 48 208.5 Tm (DISPONIBILIDAD) Tj ET
+0.16 0.39 0.23 RG .7 w 48 193.5 m 547 193.5 l S
+BT /F2 9.15 Tf 0.11 0.18 0.12 rg 1 0 0 1 48 178.5 Tm (Empleo remoto y freelance) Tj ET
+BT /F1 8.1 Tf 0.11 0.18 0.12 rg 1 0 0 1 59 164.5 Tm (- Abierto a equipos de desarrollo remotos y proyectos de software freelance.) Tj ET
+0.16 0.39 0.23 RG .7 w 48 48 m 547 48 l S
+BT /F1 7.3 Tf 0.11 0.18 0.12 rg 1 0 0 1 48 34 Tm (Portfolio: carlos-dualibe.vercel.app. Sin nivel de inglés no evaluado ni métricas inventadas.) Tj ET
 endstream
 endobj
 xref
@@ -67,11 +67,11 @@ xref
 0000000015 00000 n 
 0000000064 00000 n 
 0000000121 00000 n 
-0000000265 00000 n 
-0000000362 00000 n 
-0000000464 00000 n 
+0000000264 00000 n 
+0000000361 00000 n 
+0000000463 00000 n 
 trailer
 << /Size 7 /Root 1 0 R >>
 startxref
-5154
+4619
 %%EOF

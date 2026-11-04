@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://carlos-dualibe.vercel.app/</loc><changefreq>monthly</changefreq></url></urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://carlos-dualibe.vercel.app/</loc><changefreq>weekly</changefreq></url>
+<url><loc>https://carlos-dualibe.vercel.app/work/rendo/</loc><changefreq>monthly</changefreq></url>
+<url><loc>https://carlos-dualibe.vercel.app/work/mi-ciclo/</loc><changefreq>monthly</changefreq></url>
+<url><loc>https://carlos-dualibe.vercel.app/work/transai/</loc><changefreq>monthly</changefreq></url>
+<url><loc>https://carlos-dualibe.vercel.app/work/turnos/</loc><changefreq>monthly</changefreq></url>
+<url><loc>https://carlos-dualibe.vercel.app/work/offline/</loc><changefreq>monthly</changefreq></url>
+<url><loc>https://carlos-dualibe.vercel.app/cv/</loc><changefreq>monthly</changefreq></url>
+</urlset>
