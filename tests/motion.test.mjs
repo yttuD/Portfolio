@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -13,12 +14,17 @@ const js = read('motion.js');
 const css = read('motion.css');
 
 test('Source-recorded motion clips exist as valid WebM EBML files', () => {
+  const originalSha256 = {
+    rendo: '53796d88b1774e309285b63e919a8435f09a1e5a656054f92da52c779b634f33',
+    turnos: '35ea21c7f648cc84a26143c57458d742607d51993af88e1093efe548902afbcb'
+  };
   for (const name of ['rendo', 'turnos']) {
     const path = join(root, 'assets', name + '-motion-hero.webm');
     assert.ok(existsSync(path), name + ' clip missing');
     const bytes = readFileSync(path);
     assert.equal(bytes.subarray(0, 4).toString('hex'), '1a45dfa3', name + ' not WebM');
     assert.ok(bytes.length > 5_000 && bytes.length < 200_000, name + ' not lightweight');
+    assert.equal(createHash('sha256').update(bytes).digest('hex'), originalSha256[name], name + ' differs from the original captured recording');
   }
 });
 

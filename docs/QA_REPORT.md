@@ -62,3 +62,17 @@ Para convenciones y la arquitectura del portafolio, ver `docs/WORKBENCH_V2.md` y
 - `node --check app.js` y `node --test tests/*.test.mjs`: **25/25 PASS**.
 - Chromium local: explorador completo en **1440, 1024, 768, 390 y 320 px**. Cinco proyectos en cada tamaño, carga y decodificación de capturas, relación de aspecto nativa, ausencia de recortes y de desbordamiento horizontal, navegación por teclado, cambio de idioma ES/EN; **PASS**.
 - No se añadió ni modificó ninguna ruta a repositorios privados, ni se habilitó un enlace hacia la API descontinuada de Turnos.
+
+## Animaciones auténticas en Rendo y Turnos — publicación validada 2026-11-04
+
+- Repositorio: `yttuD/Portfolio`. Se añadió `motion.js`, `motion.css` y la suite `tests/motion.test.mjs` para mostrar animaciones reales, sin sonidos, con imágenes de respaldo.
+- Rendo: `assets/rendo-motion-hero.webm` contiene la animación sutil de estrellas de la portada pública; Turnos: `assets/turnos-motion-hero.webm` contiene la hélice de ADN 3D de su portada histórica.
+- Los videos son grabaciones reales, no recreaciones ni demostraciones de sistemas de reserva operativos. El backend y la base de datos de Turnos siguen descontinuados.
+- El primer intento de transferencia binaria produjo archivos corruptos: aunque la cabecera WebM era válida y Vercel devolvía HTTP 200, Chromium no podía decodificar los fotogramas. Se reconstruyeron los dos archivos desde los originales y sus **SHA Git de blob** se cotejaron antes de publicar:
+  - Rendo: `82d85865832fdbe91323172d264eb7d3fb7b579c`
+  - Turnos: `26baa604d1066859f9635d156bf297f0928bd01e`
+- Se añadieron verificaciones SHA-256 del archivo completo contra las grabaciones originales, para detectar futuras corrupciones incluso cuando el contenedor WebM parezca válido.
+- **QA automatizada final:** `node --check motion.js` y `node --test tests/*.test.mjs` con **30/30 PASS**.
+- **Chromium sobre producción:** Rendo y Turnos reprodujeron WebM reales con `currentTime > 0`; la pausa/reanudación manual funcionó; al cambiar de proyecto se pausó el anterior; las notas de Turnos cambiaron correctamente a inglés; con `prefers-reduced-motion: reduce` no hubo reproducción automática, pero sí reproducción iniciada por el usuario. La prueba móvil no detectó desbordamiento horizontal.
+- Despliegue Vercel del arreglo de binarios `2ad81c1`: `READY` en producción.
+- Los clips se cargan al entrar en pantalla, están silenciados, tienen bucle y ofrecen botón de reproducción/pausa. Los recursos visuales completos continúan disponibles en los casos de estudio.
