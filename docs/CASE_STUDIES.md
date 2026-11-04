@@ -1,6 +1,6 @@
 # Evidencias y límites de los casos seleccionados
 
-Este documento contextualiza los proyectos del portafolio sin pretender que todas las funcionalidades estén certificadas en producción. Las imágenes del sitio son **visualizaciones conceptuales**, no capturas de las aplicaciones.
+Este documento contextualiza los proyectos del portafolio sin pretender que todas las funcionalidades estén certificadas en producción. El sitio ahora combina **material auténtico de repositorios** (una demo de Mi Ciclo y una imagen de ensayo de TransAI) con **esquemas ilustrativos**, señalados según su procedencia. Ninguna imagen de demo acredita que la funcionalidad esté publicada en producción.
 
 ## Rendo — plataforma de alquileres
 
@@ -12,6 +12,7 @@ Este documento contextualiza los proyectos del portafolio sin pretender que toda
 
 **Qué falta acreditar:** verificar la demo en la versión final, los recorridos completos y qué mejoras de ramas están integradas en producción. Evitar estadísticas de negocio inventadas.
 
+<a id="transai"></a>
 ## TransAI — análisis visual con revisión humana
 
 **Problema:** documentar inspecciones de calidad visual, con trazabilidad y evaluación asistida por IA.
@@ -19,6 +20,8 @@ Este documento contextualiza los proyectos del portafolio sin pretender que toda
 **Enfoque documentado:** Django/DRF como autoridad del dominio; Node.js y servicios auxiliares; FastAPI para evaluación, React para interfaz, y componentes de IA local.
 
 **Autoría:** trabajo académico colaborativo. No se atribuye implementación individual de todos los componentes. Código privado.
+
+**Imagen publicada:** fotografía procedente de `test_fixtures/demo_towel_defect.jpg`; es una muestra de ensayo, no una captura del modelo ni una predicción verificada.
 
 **Qué falta acreditar:** reproducir pruebas e inferencia real en el entorno y commit de entrega, vincular evidencia de resultados, y separar heurísticas de métricas calibradas.
 
@@ -41,6 +44,16 @@ Este documento contextualiza los proyectos del portafolio sin pretender que toda
 **Privacidad:** no se identifica al cliente, no se incluye repositorio, datos ni material de producción.
 
 **Qué falta acreditar:** resultado reproducible de integración extremo a extremo, pruebas de desconexión real y alcance final autorizado por el titular.
+
+## Mi Ciclo — PWA de bienestar para cliente
+
+**Problema:** desarrollar una experiencia web instalable, accesible y cuidadosamente diseñada con registro, consentimientos versionados y onboarding guiado.
+
+**Enfoque documentado:** Next.js, React, TypeScript y Supabase. Trabajo por fases; distinguir lo entregado de lo que permanece en desarrollo.
+
+**Imagen publicada:** ícono original de Mi Ciclo y captura de `Demo-MiCiclo/playwright-test-screenshot.png`. La captura procede de una demo anterior de funcionalidades con datos de ejemplo; no es el producto final y no contiene información real de usuarias.
+
+**Privacidad:** los repositorios de la aplicación y la demo se mantienen privados. No se publican credenciales, documentos internos o datos de clientas.
 
 ## Principio editorial
 
