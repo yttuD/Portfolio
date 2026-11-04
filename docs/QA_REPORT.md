@@ -9,7 +9,7 @@ Fecha: 4 de noviembre de 2026
 
 ## Resultados verificados
 - `node --check app.js` y `node --check case.js`: PASS en el despliegue probado.
-- `node --test tests/*.test.mjs`: 19/19 PASS sobre `0e11e51`.
+- `node --test tests/*.test.mjs`: **21/21 PASS** sobre `61c7d5d`.
 - HTTP 200 de la portada y ambas descargas PDF. Las rutas con barra final redireccionan de forma canónica según configuración `cleanUrls`.
 - CV ES y EN: PDF A4 de una página. Los símbolos no soportados de listas se reemplazaron por guiones ASCII y se mantuvieron los contenidos sin nivel de inglés inventado.
 - Cinco rutas `/work/`: Rendo, Mi Ciclo, TransAI, Turnos y Offline-first.
@@ -17,6 +17,8 @@ Fecha: 4 de noviembre de 2026
   - Portada en 320, 390, 768, 1024 y 1440 px: cinco casos seleccionables, navegación por teclado, alternancia ES/EN, sin errores JavaScript ni desbordamiento horizontal.
   - Cada caso en 1440 y 390 px: arquitectura interactiva y alternancia de idioma; diálogos de imágenes donde corresponde; sin errores JavaScript ni desbordamiento horizontal.
 - Se añadió cobertura estática permanente para las traducciones de los encabezados técnicos y metadatos de casos en `tests/workbench.test.mjs`.
+- Auditoría final en Chromium sobre producción (`61c7d5d`): portada en 1440, 390 y 320 px; cada caso en 1440 y 390 px; estados del explorador, idiomas y encabezados traducidos, arquitectura y enlaces de Rendo según idioma, sin desbordamientos ni errores JavaScript.
+- Desde Chromium se descargaron ambos CV: HTTP 200, firma `%PDF-` correcta, tamaños 4823 bytes (ES) y 4800 bytes (EN).
 
 ## Exactitud de contenido
 - Rendo: se presenta como beta pública con código privado; no se atribuye el funcionamiento de todas las capacidades futuras.
