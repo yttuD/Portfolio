@@ -125,7 +125,7 @@
         else if(playing&&!loading){
           loading=import('/assets/turnos-native-3d.js').then(mod=>{
             turnos=mod.mountTurnos(root.querySelector('[data-turnos-canvas]'));
-            if(turnos.ready){root.classList.add('is-live-ready');root.querySelector('.live-preview-poster')?.classList.add('is-superseded');}
+            if(turnos.ready){root.classList.add('is-live-ready'); /* Keep original Turnos landing screenshot behind the isolated 3D viewport. */}
             if(eligible(root))turnos.start();
           }).catch(()=>{root.dataset.fallback='poster';});
         }
