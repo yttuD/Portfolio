@@ -17,7 +17,7 @@ O usar cualquier servidor de archivos estáticos. Abrir `index.html` directament
 - **TransAI**: trabajo académico colaborativo, caso descriptivo; código privado.
 - **Sistema de turnos**: enlace a repositorio público existente.
 - **Offline-first**: descripción técnica anonimizada. No contiene nombre ni datos del cliente.
-- Las visualizaciones de proyecto son **representaciones conceptuales**, identificadas como tales. No se presentan como capturas de producción.
+- Rendo y Turnos muestran capturas auténticas de sus frontends públicos; TransAI y el sistema offline-first muestran diagramas explicativos. Cada imagen está etiquetada con su procedencia.
 - Se publica únicamente el correo profesional autorizado por el propietario. No se publican teléfonos, claves, métricas inventadas ni información confidencial.
 
 ## Cambios editoriales
@@ -36,7 +36,7 @@ El contenido bilingüe principal está en `app.js` y las estructuras en `index.h
 
 1. Repositorio oficial: [`yttuD/Portfolio`](https://github.com/yttuD/Portfolio).
 2. El código está versionado en `main`; Vercel despliega automáticamente desde esa rama.
-3. En Windows, se puede usar `./publicar-windows.ps1` con las CLI de GitHub y Vercel autenticadas. Como alternativa, conectar el repositorio en Vercel, framework **Other**, carpeta raíz `/`, sin comando de build y sin directorio de salida.
+3. El proyecto `portfolio` ya está conectado a Vercel (framework **Other**, raíz `/`, sin comando de build).
 4. Desactivar protección de despliegue de producción para hacerlo público; verificar en ventana privada.
 5. Dominio: https://carlos-dualibe.vercel.app. No se requieren GitHub Actions. **No usar GitHub Actions**; Vercel despliega automáticamente desde Git.
 
@@ -50,9 +50,27 @@ El README que aparece en https://github.com/yttuD se administra en el repositori
 
 ## Recursos auténticos exhibidos
 
-- `assets/mi-ciclo-icon.svg`: iconografía original del cliente publicada con su permiso explícito.
-- `assets/mi-ciclo-feature-demo.png`: captura del repositorio de demostraciones (prototipo con contenido de ejemplo, no el producto final).
-- `assets/transai-fixture-defect.jpg`: fotografía de prueba incluida en los fixtures de TransAI, sin presentar inferencias ni resultados del modelo.
-- Los esquemas de Rendo, turnos y sincronización son ilustrativos y se identifican como tales.
+- `assets/mi-ciclo-icon.svg`: iconografía del proyecto cliente usada con autorización para mostrarla en el portafolio.
+- `assets/mi-ciclo-monolito-home.png` y `assets/mi-ciclo-monolito-descubrir.png`: capturas documentadas de la rama `Monolito`, con datos de prueba; no de la demo inicial.
+- `assets/rendo-beta-live.webp` y `assets/turnos-frontend-live.webp`: capturas públicas de Chromium tomadas el 4/11/2026 y optimizadas para web.
+- TransAI se presenta mediante un diagrama de arquitectura elaborado con CSS, sin la fotografía de ensayo anterior.
+- El esquema offline-first y la sección de decisiones son visualizaciones explicativas, no evidencia de producción.
 
 **Evidencia de imágenes:** [`docs/VISUAL_EVIDENCE.md`](docs/VISUAL_EVIDENCE.md). Contacto público autorizado: [carlosdualive@gmail.com](mailto:carlosdualive@gmail.com).
+
+
+## Identidad y procedencia visual (2026-11-04)
+
+- El portafolio presenta decisiones concretas, limitaciones y casos técnicos en lugar de métricas inventadas.
+- Las capturas **Mi Ciclo / Monolito** provienen de `Mi-Ciclo-App`, rama `Monolito`, de los recursos `docs/capturas/migracion-vistas/verificado-hoy.png` y `docs/capturas/migracion-vistas/verificado-descubrir.png`. Son evidencias visuales almacenadas en esa rama con datos de ejemplo, **no** una afirmación de que representan el último build en producción.
+- Se retiró del sitio la captura desactualizada de `Demo-MiCiclo`. El repositorio del cliente sigue privado.
+- Los diagramas de arquitectura son representaciones explicativas, no capturas de la app.
+
+## Actualización visual — 4 de noviembre de 2026
+
+- Mensaje principal y casos reescritos para describir problemas y decisiones técnicas, no frases genéricas.
+- Rendo y Turnos: **capturas reales de sus interfaces públicas**, con procedencia y fecha documentadas.
+- Mi Ciclo: imágenes de la rama `Monolito`, nunca de la demo antigua. La fuente mantiene código privado.
+- TransAI: eliminada la fotografía de prueba del material presentado; se muestra arquitectura, sin atribuirle resultados inexistentes.
+- El código fuente continúa en `yttuD/Portfolio` y la producción se despliega desde `main` en Vercel, sin GitHub Actions.
+- Cada captura y sus limitaciones están detalladas en `docs/VISUAL_EVIDENCE.md`.
