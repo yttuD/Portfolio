@@ -83,3 +83,10 @@ Para convenciones y la arquitectura del portafolio, ver `docs/WORKBENCH_V2.md` y
 - **Solución:** se retiraron los videos y sus reproductores de la portada y los casos de estudio. Dos tarjetas del Workbench contienen animaciones nativas, basadas en \`CityBackground.tsx\` (Rendo) y \`DNA3D.tsx\` (Turnos).
 - **Pruebas locales:** 30/30 pruebas del repositorio PASS; comprobación con Playwright/Chromium a 1440, 768, 390 y 320 píxeles: 55 estrellas, 14 estructuras, animaciones CSS en ejecución, instancia WebGL 3D lista, navegación por tarjetas y cambio ES/EN correctos. En movimiento reducido no se inicializa WebGL ni hay animación CSS.
 - **Verificaciones pendientes para release:** comprobar en producción que el nuevo JS se entrega íntegro y que la tarjeta Rendo abre el caso y ofrece la beta pública. No confundir estado READY con prueba funcional.
+
+## Corrección de la composición Turnos — 2026-11-04
+
+- Reporte del usuario: la tarjeta reproducía sólo la hélice, ocultando el resto de la presentación original.
+- Causa: al cargar WebGL se marcaba `live-preview-poster` como `is-superseded`, haciendo desaparecer la captura completa del frontend histórico.
+- Corrección: conservar la imagen original (barra superior, título, descripción y botones) y renderizar el modelo 3D exclusivamente sobre la vitrina derecha (`top:8.8%`, `left:46%`, degradado de transición). La tarjeta completa abre el caso de estudio, sin enlaces a funciones descontinuadas.
+- La escena en movimiento permanece condicionada a visibilidad, ahorro de datos y preferencia de movimiento reducido; el respaldo estático siempre muestra la composición completa. La prueba estática específica vive en `tests/motion.test.mjs`.

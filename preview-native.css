@@ -45,3 +45,22 @@
 .wb-native-beta-link{color:#d5f58c;border-bottom:1px solid #9ab68c;text-decoration:none;padding-bottom:2px;font:700 10px/1.5 var(--mono,monospace)}
 .wb-native-beta-link:hover{color:#f5ffe6}
 @media(prefers-reduced-motion:reduce){.wb-native-preview .live-native-stage{transition:none}}
+
+/* Turnos is a composed preview: retain the authentic 1000x625 landing screenshot
+   (brand/navigation, heading, body copy and buttons). Replace only its right-hand
+   DNA vitrine with live 3D; never cover the entire photographed interface. */
+.wb-native-preview[data-live-preview="turnos"] .live-preview-poster{
+  opacity:1;
+}
+.wb-native-preview[data-live-preview="turnos"] .live-native-stage{
+  inset:auto;
+  top:8.8%;
+  bottom:0;
+  left:46%;
+  right:0;
+  background:radial-gradient(ellipse at 54% 51%,#122039 0%,#0b1425 43%,#080c18 83%);
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 9%,#000 100%);
+  mask-image:linear-gradient(to right,transparent 0%,#000 9%,#000 100%);
+}
+/* Canvas stays inside the vitrine. The original static screenshot is the
+   reduced-motion / unsupported-WebGL fallback and always keeps its full frame. */
