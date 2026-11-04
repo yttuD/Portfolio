@@ -60,3 +60,17 @@ test('The language switch localizes image labels, metadata and Rendo links', () 
   assert.ok(js.includes('meta[property="og:locale"]'), 'Open Graph locale switch missing');
   assert.ok(js.includes("'https://rendo-beta-web.vercel.app/' + next"), 'Rendo locale-aware link missing');
 });
+
+test('Browser Gmail action and other email options exist', () => {
+  assert.ok(html.includes('https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=carlosdualive%40gmail.com'));
+  assert.ok(html.includes('href="mailto:carlosdualive@gmail.com"'));
+  assert.ok(html.includes('id="copyEmailButton"'));
+  assert.ok(html.includes('id="emailCopyStatus" role="status" aria-live="polite"'));
+});
+test('Bilingual copy action has success and fallback feedback', () => {
+  for (const key of ['contact.cta', 'contact.openApp', 'contact.copy', 'contact.copied', 'contact.copyFailed']) {
+    assert.ok(dict.es[key], key + ' absent ES');
+    assert.ok(dict.en[key], key + ' absent EN');
+  }
+  assert.ok(js.includes("emailCopyButton.addEventListener('click'"));
+});

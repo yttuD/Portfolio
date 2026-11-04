@@ -47,7 +47,7 @@
       'about.p2': "Estudio Programación en la UTN y trabajo en productos propios, desarrollos para clientes y proyectos académicos. Me gusta pensar las reglas, escribir código legible y comprobar los recorridos críticos.",
       'about.github': 'Mi actividad en GitHub', 'contact.kicker': '05 / CONECTEMOS', 'contact.line1': '¿Trabajamos', 'contact.line2': 'juntos?',
       'contact.desc': "Busco sumarme a un equipo de desarrollo y también colaboro en proyectos freelance. Si hay una aplicación que construir, mejorar o hacer más confiable, escribime.",
-      'contact.cta': 'Escribirme por correo', 'footer.note': "HECHO CON CRITERIO, NO CON UNA PLANTILLA.", 'footer.top': 'VOLVER ARRIBA ↑',
+      'contact.cta': 'Escribirme en Gmail', 'contact.openApp': 'Usar mi aplicación de correo', 'contact.copy': 'Copiar dirección', 'contact.copied': 'Dirección copiada ✓', 'contact.copyFailed': 'No se pudo copiar automáticamente. Seleccioná la dirección que aparece arriba.', 'footer.note': "HECHO CON CRITERIO, NO CON UNA PLANTILLA.", 'footer.top': 'VOLVER ARRIBA ↑',
       'hero.engineering': "INGENIERÍA DE SOFTWARE",
       'ticker.bookings': "RESERVAS SIN COLISIONES",
       'ticker.permissions': "PERMISOS QUE SE CUMPLEN",
@@ -181,7 +181,7 @@
       'about.p2': "I'm currently studying Software Development at Universidad Tecnológica Nacional (UTN). I enjoy turning business challenges into usable technology and improving how I design, code and validate solutions.",
       'about.github': 'My work on GitHub', 'contact.kicker': '05 / GET IN TOUCH', 'contact.line1': 'Shall we work', 'contact.line2': 'together?',
       'contact.desc': "Open to engineering roles and freelance projects. If you're looking for someone to build, improve or maintain a web product, let's talk.",
-      'contact.cta': 'Email me', 'footer.note': 'DESIGNED AND BUILT WITH INTENTION.', 'footer.top': 'BACK TO TOP ↑',
+      'contact.cta': 'Email via Gmail', 'contact.openApp': 'Use my email app', 'contact.copy': 'Copy email address', 'contact.copied': 'Email address copied ✓', 'contact.copyFailed': 'Could not copy automatically. Select the email address shown above.', 'footer.note': 'DESIGNED AND BUILT WITH INTENTION.', 'footer.top': 'BACK TO TOP ↑',
       'hero.engineering': "SOFTWARE ENGINEERING",
       'ticker.bookings': "NO DOUBLE BOOKINGS",
       'ticker.permissions': "ENFORCED PERMISSIONS",
@@ -325,6 +325,36 @@
     if (mobileToggle) mobileToggle.setAttribute('aria-label', mobileToggle.getAttribute('aria-expanded') === 'true' ? (next === 'es' ? 'Cerrar menú' : 'Close menu') : (next === 'es' ? 'Abrir menú' : 'Open menu')); 
     try { localStorage.setItem('portfolio-language', next); } catch (_) {}
   }
+  // Offer a working browser-based compose option without a mailto: handler.
+  // Keep the native email-app route and a clipboard alternative.
+  const emailCopyButton = document.getElementById('copyEmailButton');
+  const emailCopyStatus = document.getElementById('emailCopyStatus');
+  const contactEmail = 'carlosdualive@gmail.com';
+  async function copyContactEmail() {
+    let copied = false;
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(contactEmail);
+        copied = true;
+      }
+    } catch (_) {}
+    if (!copied) {
+      const helper = document.createElement('textarea');
+      helper.value = contactEmail;
+      helper.setAttribute('readonly', '');
+      helper.style.position = 'fixed';
+      helper.style.left = '-9999px';
+      document.body.append(helper);
+      helper.select();
+      try { copied = document.execCommand('copy'); } catch (_) {}
+      helper.remove();
+    }
+    if (emailCopyStatus) {
+      emailCopyStatus.textContent = translations[language][copied ? 'contact.copied' : 'contact.copyFailed'];
+    }
+  }
+  if (emailCopyButton) emailCopyButton.addEventListener('click', copyContactEmail);
+
   languageToggle.addEventListener('click', () => setLanguage(language === 'es' ? 'en' : 'es'));
   setLanguage(language);
 

@@ -229,3 +229,16 @@
  .transai-architecture .architecture-flow>div { padding:9px 6px; }
 }
 @media (prefers-reduced-motion:reduce) { .live-screen img { transition:none; } .live-screen:hover img { transform:none; } }
+
+/* Contact: browser-based Gmail action and vendor-neutral alternatives. */
+.email-action-group{display:flex;flex:1 1 280px;flex-direction:column;align-items:flex-start;gap:10px;min-width:0;max-width:410px}
+.email-action-group .contact-link{min-width:0;display:inline-flex;gap:16px;align-items:center}
+.email-alternatives{display:flex;align-items:center;flex-wrap:wrap;gap:10px 16px}
+.email-option{display:inline-flex;align-items:center;justify-content:space-between;gap:9px;max-width:100%;background:transparent;border:1px solid rgba(18,30,18,.35);border-radius:4px;padding:10px 12px;color:#263226;font:600 11px/1.45 var(--mono);text-decoration:none;white-space:normal;transition:background .2s,border-color .2s}
+.email-option:hover{background:rgba(23,38,20,.07);border-color:#253c20}
+.email-option:focus-visible{outline:2px solid #142b16;outline-offset:3px}
+.email-copy-status{font:600 11px/1.5 var(--mono);color:#243b27;min-height:0}
+.email-copy-status:empty{display:none}
+@media(max-width:760px){.email-action-group{width:100%;max-width:100%}.email-alternatives{gap:10px}.email-option{flex:1 1 auto}}
+@media(max-width:390px){.email-alternatives{display:grid;grid-template-columns:1fr;width:100%}.email-option{width:100%}.email-action-group .contact-link{white-space:normal}}
+
