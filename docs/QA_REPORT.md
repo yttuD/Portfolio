@@ -90,3 +90,11 @@ Para convenciones y la arquitectura del portafolio, ver `docs/WORKBENCH_V2.md` y
 - Causa: al cargar WebGL se marcaba `live-preview-poster` como `is-superseded`, haciendo desaparecer la captura completa del frontend histórico.
 - Corrección: conservar la imagen original (barra superior, título, descripción y botones) y renderizar el modelo 3D exclusivamente sobre la vitrina derecha (`top:8.8%`, `left:46%`, degradado de transición). La tarjeta completa abre el caso de estudio, sin enlaces a funciones descontinuadas.
 - La escena en movimiento permanece condicionada a visibilidad, ahorro de datos y preferencia de movimiento reducido; el respaldo estático siempre muestra la composición completa. La prueba estática específica vive en `tests/motion.test.mjs`.
+
+## Corrección de recorte horizontal del ADN de Turnos — 2026-11-04
+
+- Captura de producción aportada por el usuario: la portada estaba presente, pero casi toda la hélice 3D se renderizaba fuera del borde derecho.
+- Causa raíz: `.live-turnos-stage { width:100%; height:100% }` se combinaba con `left:46%; right:0`; el contenedor terminaba en el 146 % del ancho, y el WebGL centraba el ADN fuera del viewport recortado.
+- Ajuste mínimo limitado a Turnos: anular explícitamente ancho y alto fijos mediante `width:auto; height:auto; min-width:0; min-height:0`. Así el viewport de la escena queda en el 46–100 % del ancho de la tarjeta y en el 8,8–100 % de su altura, con la captura original intacta.
+- QA de geometría local con Chromium: 913 px (stage 493 px), 768 px (415 px), 390 px (211 px) y 320 px (173 px); **4/4 PASS**, sin desbordamiento. Se añadió una aserción de regresión de ancho y alto en `tests/motion.test.mjs`.
+- No se cambian Rendo, las páginas individuales, el proyecto original de Turnos ni el funcionamiento histórico del backend. La inspección visual del despliegue final debe distinguirse de las pruebas locales.

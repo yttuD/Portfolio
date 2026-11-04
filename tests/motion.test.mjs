@@ -73,6 +73,16 @@ test('Turnos retains the complete original landing screenshot while only the DNA
   assert.ok(panel.includes('class="live-native-stage live-turnos-stage" data-turnos-canvas'));
   assert.ok(css.includes('.wb-native-preview[data-live-preview="turnos"] .live-native-stage{'));
   assert.ok(css.includes('top:8.8%') && css.includes('left:46%'));
+  // Width/height:100% on .live-turnos-stage used to push the WebGL scene
+  // 46% beyond the card, leaving most of the rotating DNA offscreen.
+  const vitrineRule=css.split('.wb-native-preview[data-live-preview="turnos"] .live-native-stage{')[1]?.split('}')[0];
+  assert.ok(vitrineRule, 'Missing the scoped Turnos vitrine');
+  assert.match(vitrineRule,/width:auto;/);
+  assert.match(vitrineRule,/height:auto;/);
+  assert.match(vitrineRule,/left:46%;/);
+  assert.match(vitrineRule,/right:0;/);
+  assert.match(vitrineRule,/top:8\.8%;/);
+  assert.match(vitrineRule,/bottom:0;/);
   assert.ok(css.includes('mask-image:linear-gradient(to right'));
   assert.ok(css.includes('.wb-native-preview[data-live-preview="turnos"] .live-preview-poster{\n  opacity:1;'));
   assert.ok(!native.includes("querySelector('.live-preview-poster')?.classList.add('is-superseded')"));
