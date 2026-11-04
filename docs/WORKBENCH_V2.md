@@ -15,7 +15,7 @@ Convertir el portafolio en una experiencia de exploración de ingeniería con ev
 - Mi Ciclo: cliente, en desarrollo, dos capturas con datos de prueba; sin rutas privadas ni datos reales.
 - TransAI: colaboración académica, diagrama conceptual, no supuestas predicciones.
 - Turnos: backend y base de datos descontinuados; captura histórica y enlace solo a GitHub público.
-- Offline-first: arquitectura explicativa anonimizada; sin cliente identificado ni capturas internas.
+- Gestor de Aromatizantes (ruta histórica `/work/offline/`): software para clientes, equipos, visitas, recargas, inventario, cobros y cierre mensual. En desarrollo; esquema funcional ilustrativo, sin código ni registros reales del cliente.
 - Inglés del CV: texto traducido; **no indica un nivel lingüístico autoevaluado**.
 
 ## QA
@@ -27,3 +27,11 @@ Verificar con Chromium: viewport 320, 390, 768, 1024 y 1440 px; tabs y flechas, 
 - Más capturas reales de Rendo y de funciones representativas, tras revisar permisos de publicación.
 - Registrar contribuciones concretas y resultados medibles cuando existan pruebas.
 - Revisar el CV con información contractual exacta y experiencia formal cuando el titular la confirme.
+
+## Gestor de Aromatizantes — actualización editorial 2026-11-04
+
+La plataforma para empresas de aromatización se muestra por su **función comercial real**, no por una decisión de almacenamiento. El título visible es Gestor de Aromatizantes / Scent Service Manager; el slug histórico `/work/offline/` se conserva para no romper enlaces.
+
+La portada y el caso explican seis etapas de requisitos aprobados: clientes y equipos, agenda de visitas y controles, registro de intervenciones efectivamente realizadas, inventario trazable de fragancias e insumos, cargos y pagos parciales, y cierre mensual con reportes. La operación sin conexión mediante Windows/SQLite y sincronización con Supabase se explica en arquitectura. Android se mantiene como una fase posterior.
+
+**Transparencia y privacidad:** el proyecto todavía está en desarrollo y no todos los módulos comerciales están terminados. Los diagramas del portfolio son explicativos, no capturas ni pruebas de una entrega productiva. Se mantienen privados el código fuente, las pantallas internas, los datos operativos y la identidad del cliente. No se publican resultados comerciales ficticios.
