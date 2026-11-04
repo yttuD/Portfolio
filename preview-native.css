@@ -58,6 +58,12 @@
   bottom:0;
   left:46%;
   right:0;
+  /* Override .live-turnos-stage's width/height:100%.
+     With left:46%, 100% width extends past the card and clips the helix. */
+  width:auto;
+  height:auto;
+  min-width:0;
+  min-height:0;
   background:radial-gradient(ellipse at 54% 51%,#122039 0%,#0b1425 43%,#080c18 83%);
   -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 9%,#000 100%);
   mask-image:linear-gradient(to right,transparent 0%,#000 9%,#000 100%);
