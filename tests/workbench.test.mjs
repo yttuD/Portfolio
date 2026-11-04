@@ -63,3 +63,24 @@ test('Bilingual CV files are single-page PDF assets', () => {
     assert.match(text, /\/Count 1/);
   }
 });
+
+test('Every case translates section headers in both directions', () => {
+  for (const name of cases) {
+    const doc = read('work/' + name + '/index.html');
+    for (const key of ['contextIndex', 'evidenceIndex', 'architectureIndex', 'takeawaysIndex']) {
+      assert.ok(doc.includes('data-case-section-label="' + key + '"'), name + ' missing section label ' + key);
+    }
+  }
+  const code = read('case.js');
+  for (const key of ['contextIndex', 'evidenceIndex', 'architectureIndex', 'takeawaysIndex', 'skip', 'navName', 'closeImage']) {
+    assert.ok(code.includes(key + ':'), 'Missing translation key ' + key);
+  }
+});
+test('Case studies localize metadata, image descriptions and beta URLs', () => {
+  const code = read('case.js');
+  assert.ok(code.includes("data.slug==='rendo'"), 'Rendo locale link should be updated');
+  assert.ok(code.includes("link.href='https://rendo-beta-web.vercel.app/'+next"));
+  assert.ok(code.includes("description.content=txt.summary"));
+  assert.ok(code.includes("ogDescription.content=txt.summary"));
+  assert.ok(code.includes("querySelectorAll('.case-image-trigger img')"));
+});

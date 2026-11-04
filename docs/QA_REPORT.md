@@ -1,34 +1,34 @@
-# QA / portfolio — 2026-11-03
+# Informe de QA — CD / Workbench v2
+Fecha: 4 de noviembre de 2026
 
-## Validación ejecutada
+## Estado de publicación
+- Repositorio: `yttuD/Portfolio`, rama `main`.
+- Producción: `https://carlos-dualibe.vercel.app/`.
+- El despliegue `0e11e51` fue verificado en Vercel con estado `READY`.
+- No se utilizó GitHub Actions; Vercel despliega automáticamente desde GitHub.
 
-- `node --check app.js`: PASS.
-- Revisión HTML con BeautifulSoup: referencias internas a anclas existentes: PASS; 55 nodos `data-i18n` con claves en traducciones: PASS.
-- Playwright + Chromium 144: render en memoria (`page.set_content`) de la distribución autoincluida, con fuentes remotas desactivadas para evitar el bloqueo de red del entorno.
-- Viewports auditados: 1440×900, 1280×720, 768×1024, 390×844 y 320×650.
-- Menú móvil: abrir, navegar y cerrar: PASS.
-- Cambio ES → EN: PASS, título y documento traducidos.
-- Capturas: `desktop-qa.png` (1440) y `mobile-qa.png` (390, versión EN).
+## Resultados verificados
+- `node --check app.js` y `node --check case.js`: PASS en el despliegue probado.
+- `node --test tests/*.test.mjs`: 19/19 PASS sobre `0e11e51`.
+- HTTP 200 de la portada y ambas descargas PDF. Las rutas con barra final redireccionan de forma canónica según configuración `cleanUrls`.
+- CV ES y EN: PDF A4 de una página. Los símbolos no soportados de listas se reemplazaron por guiones ASCII y se mantuvieron los contenidos sin nivel de inglés inventado.
+- Cinco rutas `/work/`: Rendo, Mi Ciclo, TransAI, Turnos y Offline-first.
+- Navegador Chromium sobre la web pública, antes de la corrección final de rotulación:
+  - Portada en 320, 390, 768, 1024 y 1440 px: cinco casos seleccionables, navegación por teclado, alternancia ES/EN, sin errores JavaScript ni desbordamiento horizontal.
+  - Cada caso en 1440 y 390 px: arquitectura interactiva y alternancia de idioma; diálogos de imágenes donde corresponde; sin errores JavaScript ni desbordamiento horizontal.
+- Se añadió cobertura estática permanente para las traducciones de los encabezados técnicos y metadatos de casos en `tests/workbench.test.mjs`.
 
-## Límites importantes
+## Exactitud de contenido
+- Rendo: se presenta como beta pública con código privado; no se atribuye el funcionamiento de todas las capacidades futuras.
+- Mi Ciclo: trabajo para cliente en desarrollo; capturas con datos de prueba, sin exposición del código.
+- TransAI: proyecto académico colaborativo, diagrama conceptual; no se muestran inferencias como resultados verificados.
+- Turnos: el backend y la base de datos están descontinuados. La captura es histórica y el enlace se dirige exclusivamente al repositorio público.
+- Offline-first: caso empresarial anonimizado, sin datos ni identidad del cliente.
 
-- El navegador del entorno bloqueó navegación HTTP localhost y `file://` con `ERR_BLOCKED_BY_ADMINISTRATOR`: las pruebas se realizaron mediante render en memoria, que sí ejecuta CSS y JavaScript.
-- Google Fonts se eliminó **solo para la prueba**, comprobando el fallback tipográfico; la versión fuente conserva fuentes remotas opcionales.
-- **No** se ejecutaron Lighthouse, axe, Impeccable ni una batería completa de Playwright sobre una URL publicada; no se atribuyen notas de rendimiento o accesibilidad inexistentes.
-- **No** hay despliegue confirmado: Vercel devolvió HTTP 403 al crear el proyecto y al intentar un despliegue directo en el equipo `dutty`.
-- **No** se creó repositorio remoto GitHub: la conexión disponible no ofrece crear un repositorio nuevo. El repositorio Git local está versionado y se exporta en un bundle.
+## Límites de las verificaciones
+- No se ejecutó Lighthouse ni una auditoría externa de accesibilidad WCAG. No se afirman puntuaciones.
+- Las capturas de aplicaciones son evidencia visual, no garantía de disponibilidad o funcionamiento de cada flujo.
+- Los CV son borradores profesionales basados en los proyectos documentados. Falta incorporar fechas y antecedentes laborales exactos cuando estén verificados.
+- Queda pendiente confirmar el nivel de inglés con una prueba antes de declararlo en el CV.
 
-## Publicación pendiente
-
-1. Autorizar la creación de un repo remoto `yttuD/carlos-dualibe-portfolio` y enviar el código.
-2. Habilitar permisos de creación de proyectos en el equipo Vercel `dutty`, o importar el nuevo repo manualmente desde Vercel.
-3. Comprobar la URL pública, enlaces, capturas con fuentes cargadas, metadatos y pruebas de accesibilidad y rendimiento.
-4. Sustituir los diagramas conceptuales por capturas reales *solo* con consentimiento y revisión.
-5. Añadir correo de contacto profesional, LinkedIn y CV final aprobado cuando el titular los autorice.
-
-## Actualización de presentación personal — 3 de noviembre de 2026
-
-- La fotografía fue aportada voluntariamente por el titular y optimizada a WebP para el encabezado; conservar el original fuera de GitHub.
-- Se incorporó un quinto caso de estudio: PWA de bienestar de cliente, sin nombre comercial, capturas, datos ni enlace al código. Solo se mencionan funcionalidades documentadas como parte de la fase inicial y el proyecto sigue en desarrollo.
-- El README público de perfil vive en `yttuD/yttuD` y enlaza una copia pública de la foto desde `yttuD/Portfolio`.
-- Antes de asegurar la disponibilidad pública de Vercel, verificar un despliegue READY, su URL y navegación real.
+Para convenciones y la arquitectura del portafolio, ver `docs/WORKBENCH_V2.md` y `docs/VISUAL_EVIDENCE.md`.

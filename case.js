@@ -2,8 +2,8 @@
 'use strict';
 const data=JSON.parse(document.getElementById('caseData').textContent);
 const labels={
-es:{back:"← VOLVER A PROYECTOS",cv:"CV",contact:"CONTACTO",selected:"CD / TRABAJO SELECCIONADO",explore:"EXPLORAR PROYECTO ↗",context:"01 / CONTEXTO",evidenceNav:"02 / EVIDENCIA",architectureNav:"03 / ARQUITECTURA",lessonsNav:"04 / APRENDIZAJES",approachLabel:"EL ENFOQUE",visualTitle:"Lo que se puede ver.",architectureTitle:"Debajo de la interfaz.",architectureDesc:"Seleccioná una pieza para explorar su responsabilidad dentro del sistema.",layerResponsibility:"RESPONSABILIDAD DE ESTA PIEZA",architectureDisclaimer:"Modelo explicativo basado en la arquitectura documentada.",lessonsTitle:"Las decisiones importan.",statusLabel:"ESTADO ACTUAL",next:"SIGUIENTE PROYECTO",footer:"SOFTWARE PENSADO PARA USARSE",cvLong:"LEER MI CV ↗",view:"AMPLIAR ↗",diagramNote:"ESQUEMA CONCEPTUAL · NO ES UNA CAPTURA"},
-en:{back:"← BACK TO PROJECTS",cv:"RÉSUMÉ",contact:"CONTACT",selected:"CD / SELECTED WORK",explore:"EXPLORE PROJECT ↗",context:"01 / CONTEXT",evidenceNav:"02 / EVIDENCE",architectureNav:"03 / ARCHITECTURE",lessonsNav:"04 / TAKEAWAYS",approachLabel:"THE APPROACH",visualTitle:"What can actually be seen.",architectureTitle:"Behind the interface.",architectureDesc:"Select a layer to explore its responsibility within the system.",layerResponsibility:"WHAT THIS LAYER DOES",architectureDisclaimer:"Illustrative model based on documented architecture.",lessonsTitle:"Engineering decisions matter.",statusLabel:"CURRENT STATUS",next:"NEXT PROJECT",footer:"SOFTWARE BUILT TO BE USED",cvLong:"READ MY RÉSUMÉ ↗",view:"OPEN ↗",diagramNote:"CONCEPTUAL DIAGRAM · NOT A SCREENSHOT"}
+es:{skip:"Saltar al contenido",figureAlt:"Captura de pantalla del proyecto",navName:"Navegación del caso",closeImage:"Cerrar imagen",conceptAlt:"Esquema conceptual, no una captura real",contextIndex:"01 / CONTEXTO",evidenceIndex:"02 / EVIDENCIA",architectureIndex:"03 / ARQUITECTURA",takeawaysIndex:"04 / APRENDIZAJES",back:"← VOLVER A PROYECTOS",cv:"CV",contact:"CONTACTO",selected:"CD / TRABAJO SELECCIONADO",explore:"EXPLORAR PROYECTO ↗",context:"01 / CONTEXTO",evidenceNav:"02 / EVIDENCIA",architectureNav:"03 / ARQUITECTURA",lessonsNav:"04 / APRENDIZAJES",approachLabel:"EL ENFOQUE",visualTitle:"Lo que se puede ver.",architectureTitle:"Debajo de la interfaz.",architectureDesc:"Seleccioná una pieza para explorar su responsabilidad dentro del sistema.",layerResponsibility:"RESPONSABILIDAD DE ESTA PIEZA",architectureDisclaimer:"Modelo explicativo basado en la arquitectura documentada.",lessonsTitle:"Las decisiones importan.",statusLabel:"ESTADO ACTUAL",next:"SIGUIENTE PROYECTO",footer:"SOFTWARE PENSADO PARA USARSE",cvLong:"LEER MI CV ↗",view:"AMPLIAR ↗",diagramNote:"ESQUEMA CONCEPTUAL · NO ES UNA CAPTURA"},
+en:{skip:"Skip to content",figureAlt:"Project interface screenshot",navName:"Case study navigation",closeImage:"Close image",conceptAlt:"Conceptual diagram, not an actual screenshot",contextIndex:"01 / CONTEXT",evidenceIndex:"02 / EVIDENCE",architectureIndex:"03 / ARCHITECTURE",takeawaysIndex:"04 / TAKEAWAYS",back:"← BACK TO PROJECTS",cv:"RÉSUMÉ",contact:"CONTACT",selected:"CD / SELECTED WORK",explore:"EXPLORE PROJECT ↗",context:"01 / CONTEXT",evidenceNav:"02 / EVIDENCE",architectureNav:"03 / ARCHITECTURE",lessonsNav:"04 / TAKEAWAYS",approachLabel:"THE APPROACH",visualTitle:"What can actually be seen.",architectureTitle:"Behind the interface.",architectureDesc:"Select a layer to explore its responsibility within the system.",layerResponsibility:"WHAT THIS LAYER DOES",architectureDisclaimer:"Illustrative model based on documented architecture.",lessonsTitle:"Engineering decisions matter.",statusLabel:"CURRENT STATUS",next:"NEXT PROJECT",footer:"SOFTWARE BUILT TO BE USED",cvLong:"READ MY RÉSUMÉ ↗",view:"OPEN ↗",diagramNote:"CONCEPTUAL DIAGRAM · NOT A SCREENSHOT"}
 };
 let lang='es';
 try{if(localStorage.getItem('portfolio-language')==='en')lang='en'}catch(_){}
@@ -19,7 +19,34 @@ function setLanguage(next){
   layerBtns.forEach((b,i)=>{b.querySelector('strong').textContent=txt.layers[i][0]});
   document.getElementById('layerTitle').textContent=txt.layers[selected][0];
   document.getElementById('layerDescription').textContent=txt.layers[selected][1];
-  if(data.source){const link=document.getElementById('sourceAction');if(link)link.textContent=data.source[next]}
+  if(data.source){
+    const link=document.getElementById('sourceAction');
+    if(link){
+      link.textContent=data.source[next];
+      if(data.slug==='rendo')link.href='https://rendo-beta-web.vercel.app/'+next;
+    }
+  }
+  const accessibleText=[
+    ['.skip','textContent',ui.skip],
+    ['.case-local-nav','aria-label',ui.navName],
+    ['#closeLightbox','aria-label',ui.closeImage],
+    ['.case-diagram','aria-label',ui.conceptAlt]
+  ];
+  for(const [selector,attribute,value] of accessibleText){
+    const element=document.querySelector(selector);
+    if(!element)continue;
+    if(attribute==='textContent')element.textContent=value;else element.setAttribute(attribute,value);
+  }
+  document.querySelectorAll('.case-image-trigger img').forEach(el=>el.alt=txt.evidence);
+  document.querySelectorAll('.case-image-trigger').forEach(el=>el.setAttribute('aria-label',ui.figureAlt));
+  document.querySelectorAll('[data-case-section-label]').forEach(el=>{
+    const key=el.getAttribute('data-case-section-label');
+    if(ui[key])el.textContent=ui[key];
+  });
+  const description=document.querySelector('meta[name="description"]');
+  if(description)description.content=txt.summary;
+  const ogDescription=document.querySelector('meta[property="og:description"]');
+  if(ogDescription)ogDescription.content=txt.summary;
   langButton.textContent=next==='es'?'ES / EN':'EN / ES';
   langButton.setAttribute('aria-label',next==='es'?'Cambiar al inglés':'Switch to Spanish');
   const og=document.querySelector('meta[property="og:locale"]');if(og)og.content=next==='es'?'es_AR':'en_US';
