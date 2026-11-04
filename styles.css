@@ -95,3 +95,38 @@
 
 /* Focus-only shortcut. */
 .skip-link{top:0;transform:translateY(-150%);transition:transform .12s ease}.skip-link:focus,.skip-link:focus-visible{top:14px;transform:translateY(0)}
+
+/* Typography legibility: readable tracking beats decorative overlap. */
+.hero h1 {
+  letter-spacing: -.045em;
+  line-height: 1.055;
+}
+.hero h1 .hollow {
+  letter-spacing: -.012em;
+  font-weight: 650;
+  -webkit-text-stroke: 1.15px var(--fg);
+  text-rendering: geometricPrecision;
+}
+.section h2 { letter-spacing: -.052em; }
+.project-headline h3 { letter-spacing: -.055em; }
+.compact-copy h3 { letter-spacing: -.035em; }
+.contact-section h2 { letter-spacing: -.04em; }
+.contact-section .contact-line-2 {
+  letter-spacing: -.015em;
+  -webkit-text-stroke: 1.3px #20291b;
+}
+@media (max-width: 760px) {
+  .hero h1 { letter-spacing: -.052em; line-height: 1.08; }
+  .hero h1 .hollow { letter-spacing: -.016em; }
+  .contact-section h2 { letter-spacing: -.055em; }
+}
+@media (min-width: 761px) and (max-width: 840px) {
+  .hero h1 { font-size: clamp(56px, 8vw, 63px); }
+}
+@media (max-width: 360px) {
+  .hero h1 { font-size: 51px; }
+}
+@supports not (-webkit-text-stroke: 1px currentColor) {
+  .hero h1 .hollow { color: #d4d9ce; }
+  .contact-section .contact-line-2 { color: #35402d; }
+}
