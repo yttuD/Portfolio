@@ -163,3 +163,29 @@ test('Workbench previews explain genuine cropped details and preserve bilingual 
   assert.doesNotMatch(index, /href="https:\/\/clinica-san-martin-tpi-self\.vercel\.app/);
 });
 
+
+test('Aromatization case presents the real business domain without exposing private code',()=>{
+  assert.ok(index.includes('>Gestor de Aromatizantes</strong>'));
+  assert.ok(index.includes('>Gestor de Aromatizantes<span>.</span></h4>'));
+  assert.ok(index.includes('Gestor de Aromatizantes<span class="project-period">.</span>'));
+  const doc=read('work/offline/index.html');
+  assert.ok(doc.includes('id="caseProductName"'));
+  const json=doc.match(/<script type="application\/json" id="caseData">([\s\S]+?)<\/script>/);
+  assert.ok(json,'Missing aromatization case JSON');
+  const data=JSON.parse(json[1]);
+  assert.equal(data.slug,'offline'); // Legacy URL remains stable.
+  for(const lang of ['es','en']){
+    const item=data[lang];
+    assert.ok(item.name && item.steps.length===6 && item.flow.length===3);
+    assert.match(item.summary,/aromati|scent/i);
+    assert.match(item.state,/desarrollo|development/i);
+    assert.match(item.evidence,/diagrama|diagram/i);
+  }
+  assert.ok(doc.includes('data-aroma-step="5"'));
+  assert.ok(doc.includes('data-aroma-flow="2"'));
+  assert.ok(doc.includes('role="list"'));
+  assert.doesNotMatch(doc,/github\.com\/yttuD\/AromatizantesDemarchi/i);
+  assert.doesNotMatch(index,/github\.com\/yttuD\/AromatizantesDemarchi/i);
+  assert.ok(read('case.js').includes("querySelectorAll('[data-aroma-step]')"));
+  assert.ok(read('case.js').includes("querySelectorAll('[data-aroma-flow]')"));
+});
