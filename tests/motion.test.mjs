@@ -81,7 +81,7 @@ test('Turnos retains the complete original landing screenshot while only the DNA
   assert.match(vitrineRule,/height:auto;/);
   assert.match(vitrineRule,/left:46%;/);
   assert.match(vitrineRule,/right:0;/);
-  assert.match(vitrineRule,/top:8\\.8%;/);
+  assert.match(vitrineRule,/top:8\.8%;/);
   assert.match(vitrineRule,/bottom:0;/);
   assert.ok(css.includes('mask-image:linear-gradient(to right'));
   assert.ok(css.includes('.wb-native-preview[data-live-preview="turnos"] .live-preview-poster{\n  opacity:1;'));
